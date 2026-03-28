@@ -1,0 +1,76 @@
+.pooja {
+  background: linear-gradient(135deg, #0B1D3A 0%, #050E1D 100%);
+  padding: 8rem 0;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgOrnament {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  opacity: 0.05;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.title {
+  color: var(--gold-accent);
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  text-align: center;
+  transition: all 0.4s var(--transition-smooth);
+}
+
+.card:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  transform: scale(1.02);
+}
+
+.iconBox {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(212, 175, 55, 0.1);
+  border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  color: var(--gold-accent);
+  margin-bottom: 1rem;
+}
+
+.cardDesc {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}

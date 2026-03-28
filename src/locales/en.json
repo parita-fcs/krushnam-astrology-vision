@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "pooja": "Pooja"
+  },
+  "hero": {
+    "title": "Guiding Your Life with Trusted Astrology",
+    "subtitle1": "Vedic Astrology | Vastu | Pooja Services",
+    "book": "Book Consultation",
+    "whatsapp": "WhatsApp"
+  },
+  "services": {
+    "title": "Our Sacred Services",
+    "subtitle": "Spiritual guidance for every aspect of your life",
+    "items": {
+      "janam_kundli": "Janam Kundli Analysis",
+      "vedic_pooja": "Vedic Pooja & Yagya",
+      "karmakand": "Karmakand Vidhi",
+      "vastu": "Vastu Consultation",
+      "marriage": "Marriage Matching",
+      "career": "Business & Career Guidance"
+    }
+  },
+  "about": {
+    "title": "About Shastri Shree Amit B. Trivedi",
+    "subtitle": "Astrology Expert | Vastu Expert | Vedic Pooja Specialist",
+    "desc": "With years of profound experience in Vedic Astrology, Shastri Shree Amit B. Trivedi provides accurate solutions for life's complex challenges. His expertise spans across Kundli analysis, Vastu Shastra, and sacred Vedic rituals.",
+    "experience": "10+ Years Experience",
+    "clients": "1000+ Trusted Clients",
+    "expertise": "Expert Guidance"
+  },
+  "why_choose": {
+    "title": "Why Choose Us",
+    "accurate": "Accurate Predictions",
+    "sacred": "Sacred Rituals",
+    "privacy": "Total Privacy",
+    "experience": "Rich Experience"
+  },
+  "contact": {
+    "title": "Connect With Us",
+    "phone": "Phone",
+    "address": "Address",
+    "address_val": "Gadhada (Swamina), Dist. Botad, Gujarat (India)",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "pooja": {
+    "title": "Sacred Pooja & Rituals",
+    "subtitle": "Traditional Vedic procedures conducted with utmost devotion and precision.",
+    "items": {
+      "mrityunjaya": "Maha Mrityunjaya",
+      "mrityunjaya_desc": "For health and longevity",
+      "ganesh": "Ganesh Pooja",
+      "ganesh_desc": "For new beginnings",
+      "navgrah": "Navgrah Shanti",
+      "navgrah_desc": "For planetary balance",
+      "vastu": "Vastu Shanti",
+      "vastu_desc": "For home harmony",
+      "book": "Book Pooja"
+    }
+  }
+}

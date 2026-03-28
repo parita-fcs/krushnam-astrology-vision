@@ -1,0 +1,82 @@
+.footer {
+  background-color: var(--bg-cream);
+  padding: 6rem 0 2rem;
+  border-top: 1px solid var(--gold-accent);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.brand {
+  flex: 1.5;
+}
+
+.links {
+  flex: 1;
+}
+
+.contact {
+  flex: 1;
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.logoText {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+}
+
+.desc {
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 350px;
+}
+
+.title {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-blue);
+}
+
+.linkList {
+  list-style: none;
+}
+
+.linkItem {
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+.linkItem:hover {
+  color: var(--gold-accent);
+}
+
+.bottom {
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+}

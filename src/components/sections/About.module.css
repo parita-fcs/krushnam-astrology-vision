@@ -1,0 +1,110 @@
+.about {
+  background-color: var(--bg-cream);
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.left {
+  flex: 1;
+  position: relative;
+}
+
+.right {
+  flex: 1.2;
+}
+
+.imageBox {
+  position: relative;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+  border: 4px solid #fff;
+}
+
+.astrologerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ornament {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  z-index: 1;
+  color: var(--gold-accent);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: var(--gold-accent);
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+}
+
+.desc {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.highlightIcon {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-accent);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.highlightText {
+  font-weight: 700;
+  color: var(--primary-blue);
+  font-size: 1.125rem;
+}
+
+@media (max-width: 991px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 4rem;
+  }
+  
+  .imageBox {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .highlights {
+    justify-content: center;
+  }
+}

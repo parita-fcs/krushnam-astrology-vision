@@ -10,6 +10,11 @@
 !.yarn/releases
 !.yarn/versions
 
+# User requested to ignore lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
 # testing
 /coverage
 
@@ -19,10 +24,12 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
 *.pem
+Thumbs.db
 
 # debug
 npm-debug.log*
@@ -30,8 +37,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files (recommended to keep private)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # vercel
 .vercel
@@ -39,3 +50,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
