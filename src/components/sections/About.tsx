@@ -42,6 +42,27 @@ export default function About() {
                 <span className={styles.badgeNum}>12+</span>
                 <span className={styles.badgeText}>{t("about.experience")}</span>
               </motion.div>
+              
+              {/* Cute traditional decor */}
+              <div className={styles.imageDecor}>
+                <motion.div 
+                  className={styles.decorIcon}
+                  animate={{ rotate: [0, 5, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  <svg viewBox="0 0 40 40" fill="var(--secondary)" width="60">
+                    <path d="M10 15C10 10 30 10 30 15C30 35 10 35 10 15Z" opacity="0.6" />
+                    <path d="M20 15L18 22Q20 25 22 22L20 15Z" fill="white" />
+                  </svg>
+                </motion.div>
+                <div className={styles.decorFlute}>
+                  <svg viewBox="0 0 100 20" fill="var(--secondary)" width="80">
+                    <rect x="5" y="8" width="80" height="2" rx="1" />
+                    <circle cx="20" cy="9" r="0.5" fill="white" />
+                    <circle cx="35" cy="9" r="0.5" fill="white" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </motion.div>
           

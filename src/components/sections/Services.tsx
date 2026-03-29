@@ -59,7 +59,13 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className={styles.topLabel}>Our Expertise</span>
+          <span className={styles.topLabel}>
+            <svg viewBox="0 0 100 20" fill="currentColor" width="40" style={{ marginRight: '10px', verticalAlign: 'middle' }}>
+              <rect x="5" y="8" width="80" height="4" rx="2" />
+              <path d="M85 10C88 10 90 7 92 8C94 9 95 12 92 13C90 14 88 11 85 11V10Z" />
+            </svg>
+            Our Expertise
+          </span>
           <h2 className={styles.title}>{t("services.title")}</h2>
           <p className={styles.subtitle}>{t("services.subtitle")}</p>
         </motion.div>

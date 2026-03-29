@@ -24,11 +24,16 @@
 }
 
 body {
-  background-color: var(--bg-light);
+  background-color: transparent;
   color: var(--text-dark);
   font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
+}
+
+/* Base background for the entire app */
+html {
+  background-color: var(--bg-light);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -99,19 +104,6 @@ button {
   backdrop-filter: blur(10px);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
-}
-
-/* Patterns */
-.cosmic-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle at 10% 20%, rgba(11, 22, 35, 0.02) 0%, transparent 50%),
-                    radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: -1;
 }
 
 /* Animations */

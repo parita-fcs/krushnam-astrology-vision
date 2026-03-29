@@ -5,7 +5,7 @@
   align-items: center;
   overflow: hidden;
   padding-top: 80px;
-  background-color: var(--bg-light);
+  background-color: transparent;
 }
 
 .cosmicBackground {
@@ -93,6 +93,39 @@
   color: var(--text-muted);
   margin-bottom: 3rem;
   max-width: 500px;
+}
+
+.gitaQuote {
+  margin-bottom: 3rem;
+  padding-left: 1.5rem;
+  position: relative;
+  max-width: 600px;
+}
+
+.gitaQuote p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--secondary);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.gitaQuote span {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.quoteLine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gold-gradient);
+  border-radius: 5px;
 }
 
 .btns {
@@ -183,6 +216,12 @@
   border: 2px solid var(--secondary);
 }
 
+.portalIcon {
+  position: absolute;
+  z-index: 3;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+}
+
 .krishnaImg {
   object-fit: cover;
 }
@@ -194,6 +233,12 @@
   background: var(--secondary);
   border-radius: 50%;
   box-shadow: 0 0 10px var(--secondary);
+}
+
+.footprintParticle {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.2));
 }
 
 .particle {

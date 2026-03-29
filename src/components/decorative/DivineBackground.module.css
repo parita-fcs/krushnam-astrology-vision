@@ -1,0 +1,98 @@
+.divineWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.01) 0%, transparent 70%);
+}
+
+.iconLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.floatingIcon {
+  position: absolute;
+  filter: blur(0.2px) drop-shadow(0 0 5px rgba(212, 175, 55, 0.05));
+  will-change: transform, opacity;
+}
+
+.quoteLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bgQuote {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  opacity: 0.015;
+  white-space: nowrap;
+  letter-spacing: 0.15rem;
+  user-select: none;
+  filter: blur(1px);
+  max-width: 80%;
+}
+
+/* Rangoli Corners */
+.rangoliCornerTopLeft {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='48' fill='none' stroke='rgba(212,175,55,0.03)' stroke-width='0.2'/%3E%3Cpath d='M50 2Q60 40 98 50Q60 60 50 98Q40 60 2 50Q40 40 50 2' fill='none' stroke='rgba(212,175,55,0.05)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: contain;
+  opacity: 0.8;
+  transform: rotate(0deg);
+}
+
+.rangoliCornerBottomRight {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='48' fill='none' stroke='rgba(212,175,55,0.03)' stroke-width='0.2'/%3E%3Cpath d='M50 2Q60 40 98 50Q60 60 50 98Q40 60 2 50Q40 40 50 2' fill='none' stroke='rgba(212,175,55,0.05)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: contain;
+  opacity: 0.8;
+  transform: rotate(180deg);
+}
+
+.cuteKrishnaCorner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .bgQuote {
+    font-size: 1.8rem;
+  }
+  .rangoliCornerTopLeft, .rangoliCornerBottomRight {
+    width: 200px;
+    height: 200px;
+  }
+  .cuteKrishnaCorner {
+    width: 100px;
+    height: 100px;
+  }
+}

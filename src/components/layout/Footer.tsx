@@ -69,6 +69,13 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p>© 2026 Krushnam Astrology Vision. All rights reserved. Designed with Vedic Grace.</p>
+          <div className={styles.blessing}>
+            <svg viewBox="0 0 100 20" fill="var(--secondary)" width="40" style={{ marginBottom: '5px' }}>
+              <rect x="5" y="8" width="80" height="2" rx="1" />
+              <path d="M85 10C88 10 90 7 92 8C94 9 95 12 92 13C90 14 88 11 85 11V10Z" />
+            </svg>
+            <p className={styles.blessText}>May Krishna's Light Guide Your Path</p>
+          </div>
         </div>
       </div>
     </footer>

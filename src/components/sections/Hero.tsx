@@ -69,6 +69,17 @@ export default function Hero() {
               {t("hero.subtitle")}
             </p>
             
+            <motion.div 
+              className={styles.gitaQuote}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 1.5 }}
+            >
+              <div className={styles.quoteLine}></div>
+              <p>"{t("about.quote")}"</p>
+              <span>{t("about.quote_author")}</span>
+            </motion.div>
+            
             <div className={styles.btns}>
               <motion.button 
                 whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(0, 168, 89, 0.4)" }}
@@ -116,8 +127,23 @@ export default function Hero() {
               <div className={styles.cosmicPortal}>
                 <div className={styles.outerCircle}></div>
                 <div className={styles.innerCircle}></div>
-                {/* Removed centerSun and Image */}
-
+                
+                {/* Floating Peacock Feather in Portal */}
+                <motion.div 
+                  className={styles.portalIcon}
+                  animate={{ 
+                    y: [0, -15, 0],
+                    rotate: [0, 10, 0]
+                  }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <svg viewBox="0 0 40 100" fill="var(--secondary)" opacity="0.4" width="60">
+                    <path d="M20 95C20 95 20 80 20 60C20 40 5 25 5 15C5 5 15 2 20 2C25 2 35 5 35 15C35 25 20 40 20 60" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    <ellipse cx="20" cy="15" rx="8" ry="12" fill="currentColor" fillOpacity="0.2" />
+                    <ellipse cx="20" cy="15" rx="4" ry="6" fill="currentColor" fillOpacity="0.4" />
+                  </svg>
+                </motion.div>
+                
                 {/* Floating Zodiac Symbols */}
                 {[...Array(12)].map((_, i) => (
                   <motion.div
@@ -140,6 +166,34 @@ export default function Hero() {
                 ))}
               </div>
               <div className={styles.floatingParticles}>
+                {/* Cute Footprints trail */}
+                {[...Array(5)].map((_, i) => (
+                  <motion.div
+                    key={`foot-${i}`}
+                    className={styles.footprintParticle}
+                    style={{
+                      left: `${10 + i * 20}%`,
+                      bottom: `${20 + (i % 2 === 0 ? 0 : 5)}%`,
+                    }}
+                    animate={{ 
+                      opacity: [0, 0.2, 0],
+                      scale: [0.8, 1, 0.8]
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      delay: i * 0.8
+                    }}
+                  >
+                    <svg viewBox="0 0 40 40" fill="var(--secondary)" width="20">
+                      <ellipse cx="20" cy="25" rx="8" ry="10" />
+                      <circle cx="12" cy="10" r="3" />
+                      <circle cx="18" cy="8" r="3" />
+                      <circle cx="24" cy="9" r="3" />
+                    </svg>
+                  </motion.div>
+                ))}
+                
                 {[...Array(15)].map((_, i) => (
                   <motion.div
                     key={i}
