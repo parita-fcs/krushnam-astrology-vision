@@ -7,10 +7,10 @@ import styles from "./Services.module.css";
 import { 
   FileText, 
   Flame, 
-  BookOpen, 
-  Home, 
+  Compass, 
   Heart, 
-  Briefcase 
+  Briefcase,
+  Gem
 } from "lucide-react";
 
 export default function Services() {
@@ -18,34 +18,34 @@ export default function Services() {
 
   const servicesList = [
     { 
-      key: "janam_kundli", 
-      icon: <FileText size={40} />,
-      id: "kundli" 
-    },
-    { 
-      key: "vedic_pooja", 
-      icon: <Flame size={40} />,
-      id: "pooja" 
-    },
-    { 
-      key: "karmakand", 
-      icon: <BookOpen size={40} />,
-      id: "karmakand" 
-    },
-    { 
-      key: "vastu", 
-      icon: <Home size={40} />,
-      id: "vastu" 
+      key: "kundli", 
+      icon: <FileText size={32} />,
+      color: "#00A859"
     },
     { 
       key: "marriage", 
-      icon: <Heart size={40} />,
-      id: "marriage" 
+      icon: <Heart size={32} />,
+      color: "#F58634"
     },
     { 
       key: "career", 
-      icon: <Briefcase size={40} />,
-      id: "career" 
+      icon: <Briefcase size={32} />,
+      color: "#FFCC29"
+    },
+    { 
+      key: "vastu", 
+      icon: <Compass size={32} />,
+      color: "#00A859"
+    },
+    { 
+      key: "remedies", 
+      icon: <Flame size={32} />,
+      color: "#F58634"
+    },
+    { 
+      key: "gemstones", 
+      icon: <Gem size={32} />,
+      color: "#FFCC29"
     }
   ];
 
@@ -57,28 +57,39 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
+          <span className={styles.topLabel}>Our Expertise</span>
           <h2 className={styles.title}>{t("services.title")}</h2>
           <p className={styles.subtitle}>{t("services.subtitle")}</p>
-          <div className="section-divider"></div>
         </motion.div>
         
         <div className={styles.grid}>
           {servicesList.map((service, index) => (
             <motion.div 
-              key={service.id}
+              key={service.key}
               className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
             >
-              <div className={styles.icon}>{service.icon}</div>
+              <div 
+                className={styles.iconBox} 
+                style={{ backgroundColor: `${service.color}15`, color: service.color }}
+              >
+                {service.icon}
+              </div>
               <h3 className={styles.cardTitle}>{t(`services.items.${service.key}`)}</h3>
               <p className={styles.cardDesc}>
-                Personalized professional guidance based on ancient Vedic principles and stars orientation.
+                Explore your cosmic potential with our expert analysis and traditional wisdom.
               </p>
+              <motion.div 
+                className={styles.cardGlow}
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+              />
             </motion.div>
           ))}
         </div>
@@ -86,3 +97,4 @@ export default function Services() {
     </section>
   );
 }
+

@@ -4,61 +4,69 @@
     "services": "Services",
     "about": "About",
     "contact": "Contact",
-    "pooja": "Pooja"
+    "kundli": "Kundli",
+    "pooja": "Remedies"
   },
   "hero": {
-    "title": "Guiding Your Life with Trusted Astrology",
-    "subtitle1": "Vedic Astrology | Vastu | Pooja Services",
-    "book": "Book Consultation",
-    "whatsapp": "WhatsApp"
-  },
-  "services": {
-    "title": "Our Sacred Services",
-    "subtitle": "Spiritual guidance for every aspect of your life",
-    "items": {
-      "janam_kundli": "Janam Kundli Analysis",
-      "vedic_pooja": "Vedic Pooja & Yagya",
-      "karmakand": "Karmakand Vidhi",
-      "vastu": "Vastu Consultation",
-      "marriage": "Marriage Matching",
-      "career": "Business & Career Guidance"
-    }
+    "title": "Discover Your Destiny with Krushnam",
+    "subtitle": "Guided by Ancient Vedic Wisdom & Krishna's Eternal Light",
+    "get_kundli": "Get Your Kundli",
+    "book": "Book Consultation"
   },
   "about": {
-    "title": "About Shastri Shree Amit B. Trivedi",
-    "subtitle": "Astrology Expert | Vastu Expert | Vedic Pooja Specialist",
-    "desc": "With years of profound experience in Vedic Astrology, Shastri Shree Amit B. Trivedi provides accurate solutions for life's complex challenges. His expertise spans across Kundli analysis, Vastu Shastra, and sacred Vedic rituals.",
-    "experience": "10+ Years Experience",
-    "clients": "1000+ Trusted Clients",
-    "expertise": "Expert Guidance"
+    "title": "A Legacy of Spiritual Wisdom",
+    "subtitle": "Guided by Krishna's Eternal Light",
+    "desc1": "Our journey began with a simple vision: to bring the profound clarity of Vedic Astrology to the modern world. Inspired by the timeless teachings of the Bhagavad Gita, we help you navigate life's complexities with divine insight.",
+    "desc2": "With over 12 years of experience, we blend traditional Indian spiritual aesthetics with modern analytical precision.",
+    "quote": "nainam chindanti shastrani nainam dahati pavakah | na chainam kledayanty apo na shosayati marutah ||",
+    "quote_author": "— Shrimad Bhagavad Gita",
+    "experience": "12+ Years Practice",
+    "clients": "5000+ Lives Guided"
+  },
+  "services": {
+    "title": "Divine Guidance Services",
+    "subtitle": "Tailored astrological solutions for your spiritual and material well-being",
+    "items": {
+      "kundli": "Kundli Analysis",
+      "marriage": "Marriage Matching",
+      "career": "Career Guidance",
+      "vastu": "Vastu Consultation",
+      "remedies": "Remedies (Pooja/Havan)",
+      "gemstones": "Gemstone Advice"
+    }
   },
   "why_choose": {
-    "title": "Why Choose Us",
-    "accurate": "Accurate Predictions",
-    "sacred": "Sacred Rituals",
-    "privacy": "Total Privacy",
-    "experience": "Rich Experience"
+    "title": "The Pillars of Our Trust",
+    "item1_title": "Personalized Reports",
+    "item1_desc": "Deeply analyzed charts tailored specifically to your birth details.",
+    "item2_title": "Scientific Approach",
+    "item2_desc": "Blending mathematical calculations with spiritual intuition.",
+    "item3_title": "Trusted Guidance",
+    "item3_desc": "Years of experience in helping people find their true path.",
+    "item4_title": "Total Confidentiality",
+    "item4_desc": "Your details and readings are kept strictly between us."
+  },
+  "interactive": {
+    "title": "Calculate Your Free Kundli",
+    "subtitle": "Enter your birth details for a deep cosmic insight",
+    "name": "Full Name",
+    "dob": "Date of Birth",
+    "tob": "Time of Birth",
+    "pob": "Place of Birth",
+    "calculate": "Generate Kundli",
+    "zodiac": "Select Your Zodiac"
+  },
+  "testimonials": {
+    "title": "Transformative Experiences",
+    "subtitle": "Hear from those who found their path through our guidance"
   },
   "contact": {
-    "title": "Connect With Us",
-    "phone": "Phone",
-    "address": "Address",
-    "address_val": "Gadhada (Swamina), Dist. Botad, Gujarat (India)",
+    "title": "Let's Begin Your Journey",
+    "subtitle": "Reach out for a personal consultation or any queries",
+    "name": "Your Name",
+    "email": "Email Address",
+    "message": "How can we help you?",
+    "submit": "Send Message",
     "whatsapp": "Chat on WhatsApp"
-  },
-  "pooja": {
-    "title": "Sacred Pooja & Rituals",
-    "subtitle": "Traditional Vedic procedures conducted with utmost devotion and precision.",
-    "items": {
-      "mrityunjaya": "Maha Mrityunjaya",
-      "mrityunjaya_desc": "For health and longevity",
-      "ganesh": "Ganesh Pooja",
-      "ganesh_desc": "For new beginnings",
-      "navgrah": "Navgrah Shanti",
-      "navgrah_desc": "For planetary balance",
-      "vastu": "Vastu Shanti",
-      "vastu_desc": "For home harmony",
-      "book": "Book Pooja"
-    }
   }
 }

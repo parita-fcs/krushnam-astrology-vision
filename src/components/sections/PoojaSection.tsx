@@ -5,31 +5,45 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./PoojaSection.module.css";
 import { 
-  Sun, 
-  Moon, 
-  Wind,
   Flame,
-  Droplets
+  Wind,
+  Music,
+  Gem
 } from "lucide-react";
 
 export default function PoojaSection() {
   const { t } = useLanguage();
 
-  const poojas = [
-    { key: "mrityunjaya", icon: <Flame size={32} /> },
-    { key: "ganesh", icon: <Sun size={32} /> },
-    { key: "navgrah", icon: <Moon size={32} /> },
-    { key: "vastu", icon: <Wind size={32} /> }
+  const remedies = [
+    { 
+      key: "pooja", 
+      icon: <Flame size={32} />, 
+      title: "Vedic Pooja",
+      desc: "Traditional rituals performed with precise Vedic mantras for divine harmony."
+    },
+    { 
+      key: "havan", 
+      icon: <Wind size={32} />, 
+      title: "Sacred Havan",
+      desc: "Purifying fire ceremonies to clear negative energy and bring prosperity."
+    },
+    { 
+      key: "mantra", 
+      icon: <Music size={32} />, 
+      title: "Mantra Jaap",
+      desc: "Powerful sound vibrations tailored to balance your specific planetary shifts."
+    },
+    { 
+      key: "gemstones", 
+      icon: <Gem size={32} />, 
+      title: "Gemstones",
+      desc: "Blessed stones prescribed according to your birth chart for long-term benefit."
+    }
   ];
 
   return (
     <section className={styles.pooja} id="pooja">
-      <div className={styles.bgOrnament}>
-         <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none">
-           <circle cx="50" cy="50" r="40" stroke="var(--gold-accent)" strokeOpacity="0.1" />
-           <path d="M50 10L60 40H90L65 60L75 90L50 70L25 90L35 60L10 40H40L50 10Z" stroke="var(--gold-accent)" strokeOpacity="0.1" />
-         </svg>
-      </div>
+      <div className={styles.glowOverlay}></div>
       
       <div className={`${styles.container} container`}>
         <motion.div 
@@ -37,28 +51,31 @@ export default function PoojaSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
         >
-          <h2 className={styles.title}>{t("pooja.title")}</h2>
-          <p className={styles.subtitle}>{t("pooja.subtitle")}</p>
+          <span className={styles.topLabel}>Sacred Remedies</span>
+          <h2 className={styles.title}>Spiritual Solutions</h2>
+          <p className={styles.subtitle}>Bringing peace and balance through traditional Vedic wisdom</p>
         </motion.div>
         
         <div className={styles.grid}>
-          {poojas.map((pooja, index) => (
+          {remedies.map((item, index) => (
             <motion.div 
               key={index}
               className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className={styles.iconBox}>{pooja.icon}</div>
-              <h3 className={styles.cardTitle}>{t(`pooja.items.${pooja.key}`)}</h3>
-              <p className={styles.cardDesc}>{t(`pooja.items.${pooja.key}_desc`)}</p>
-              <button className="btn btn-outline" style={{ display: "block", margin: "0 auto" }}>
-                 {t("pooja.items.book")}
-              </button>
+              <div className={styles.smokeEffect}></div>
+              <div className={styles.cardContent}>
+                <div className={styles.iconBox}>{item.icon}</div>
+                <h3 className={styles.cardTitle}>{item.title}</h3>
+                <p className={styles.cardDesc}>{item.desc}</p>
+                <button className={styles.bookBtn}>
+                  Learn More
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -66,3 +83,4 @@ export default function PoojaSection() {
     </section>
   );
 }
+

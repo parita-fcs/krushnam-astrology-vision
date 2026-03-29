@@ -5,12 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./Navbar.module.css";
-import { Phone, MessageSquare, Sparkles } from "lucide-react";
+import { MessageSquare, Sparkles, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,35 +23,24 @@ export default function Navbar() {
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
-      <motion.div 
-        className={`${styles.navContainer} container`}
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className={`${styles.navContainer} container`}>
         <div className={styles.logoBox}>
           <Link href="#home">
-            <Image
-              src="/assets/logo.png"
-              alt="Krushnam Astrology Vision"
-              width={160}
-              height={55}
-              className={styles.logoImage}
-              priority
-            />
+            <h2 className={styles.logoText}>KRUSHNAM<span> VISION</span></h2>
           </Link>
         </div>
 
-        <ul className={styles.menu}>
-          <li><Link href="#home" className={styles.menuItem}>{t("nav.home")}</Link></li>
-          <li><Link href="#services" className={styles.menuItem}>{t("nav.services")}</Link></li>
-          <li><Link href="#about" className={styles.menuItem}>{t("nav.about")}</Link></li>
-          <li><Link href="#contact" className={styles.menuItem}>{t("nav.contact")}</Link></li>
+        <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ""}`}>
+          <li><Link href="#home" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.home")}</Link></li>
+          <li><Link href="#about" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.about")}</Link></li>
+          <li><Link href="#services" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.services")}</Link></li>
+          <li><Link href="#kundli" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.kundli")}</Link></li>
+          <li><Link href="#contact" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.contact")}</Link></li>
         </ul>
 
         <div className={styles.actions}>
           <div className={styles.langToggle}>
-            {["en", "hi", "gu"].map((lang) => (
+            {["en", "hi"].map((lang) => (
               <button
                 key={lang}
                 className={`${styles.langBtn} ${language === lang ? styles.langBtnActive : ""}`}
@@ -62,22 +52,24 @@ export default function Navbar() {
           </div>
           
           <div className={styles.ctaGroup}>
-            <Link href="https://wa.me/918160874164" target="_blank" className={styles.whatsappIcon}>
-               <MessageSquare size={20} />
+            <Link href="#kundli">
+               <motion.button 
+                 whileHover={{ scale: 1.05 }}
+                 className={styles.bookBtn}
+               >
+                 <Sparkles size={16} />
+                 <span>Get Kundli</span>
+               </motion.button>
             </Link>
             
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={styles.bookBtn}
-            >
-              <Sparkles size={16} className="text-gold" />
-              <span>{t("hero.book")}</span>
-            </motion.button>
+            <button className={styles.mobileToggle} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
-      </motion.div>
+      </div>
     </nav>
   );
 }
+
 

@@ -1,92 +1,169 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./Hero.module.css";
-import { Phone, MessageCircle } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const { t } = useLanguage();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return (
+    <section className={styles.hero} id="home">
+      <div className={styles.cosmicBackground}>
+        <div className={styles.starField}></div>
+        <div className={styles.glowOverlay}></div>
+      </div>
+      <div className={`${styles.container} container`}>
+        <div className={styles.content}>
+          <div className={styles.left}>
+            <h1 className={styles.title}>{t("hero.title")}</h1>
+            <p className={styles.subtitle}>{t("hero.subtitle")}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 
   return (
     <section className={styles.hero} id="home">
-      <div className={styles.bgPattern}>
-         <div className="zodiac-pattern"></div>
+      <div className={styles.cosmicBackground}>
+        <div className={styles.starField}></div>
+        <motion.div 
+          className={styles.zodiacRing}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+        />
+        <div className={styles.glowOverlay}></div>
       </div>
       
       <div className={`${styles.container} container`}>
-        <motion.div 
-          className={styles.left}
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className={styles.title}>{t("hero.title")}</h1>
-          <p className={styles.subtitle}>{t("hero.subtitle1")}</p>
+        <div className={styles.content}>
+          <motion.div 
+            className={styles.left}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div 
+              className={styles.badge}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.5, type: "spring" }}
+            >
+              <Sparkles size={16} className={styles.accentIcon} />
+              <span>Vedic Astrology & Modern Insight</span>
+            </motion.div>
+            
+            <h1 className={styles.title}>
+              {t("hero.title")}
+            </h1>
+            <p className={styles.subtitle}>
+              {t("hero.subtitle")}
+            </p>
+            
+            <div className={styles.btns}>
+              <motion.button 
+                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(0, 168, 89, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                className="btn btn-primary"
+              >
+                {t("hero.get_kundli")}
+                <ArrowRight size={18} />
+              </motion.button>
+              
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn btn-secondary"
+              >
+                {t("hero.book")}
+              </motion.button>
+            </div>
+
+            <div className={styles.stats}>
+              <div className={styles.statItem}>
+                <span className={styles.statNum}>12+</span>
+                <span className={styles.statLabel}>Years</span>
+              </div>
+              <div className={styles.statDivider}></div>
+              <div className={styles.statItem}>
+                <span className={styles.statNum}>5k+</span>
+                <span className={styles.statLabel}>Clients</span>
+              </div>
+              <div className={styles.statDivider}></div>
+              <div className={styles.statItem}>
+                <span className={styles.statNum}>99%</span>
+                <span className={styles.statLabel}>Accuracy</span>
+              </div>
+            </div>
+          </motion.div>
           
-          <div className={styles.btns}>
-             <motion.button 
-               whileHover={{ scale: 1.05 }}
-               whileTap={{ scale: 0.95 }}
-               className="btn btn-primary"
-             >
-               {t("hero.book")}
-             </motion.button>
-             
-             <Link href="https://wa.me/918160874164" target="_blank">
-               <motion.button 
-                 whileHover={{ scale: 1.05 }}
-                 whileTap={{ scale: 0.95 }}
-                 className="btn btn-outline"
-               >
-                 <MessageCircle size={20} />
-                 {t("hero.whatsapp")}
-               </motion.button>
-             </Link>
-          </div>
-        </motion.div>
-        
-        <motion.div 
-          className={styles.right}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className={styles.cardWrapper}>
-             {/* Floating elements */}
-             <motion.div 
-               className={styles.floatingIcon} 
-               style={{ top: -40, right: -40 }}
-               animate={{ y: [0, -15, 0] }}
-               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-             >
-               <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-                 <circle cx="50" cy="50" r="45" stroke="var(--gold-accent)" strokeOpacity="0.3" strokeDasharray="5 5" />
-               </svg>
-             </motion.div>
-             
-             <motion.div 
-               className={styles.imageCard}
-               whileHover={{ y: -10 }}
-               transition={{ type: "spring", stiffness: 300 }}
-             >
-                <Image 
-                  src="/assets/astrologer.png"
-                  alt="Shastri Shree Amit B. Trivedi"
-                  width={450}
-                  height={550}
-                  className={styles.astrologerImage}
-                  priority
-                  onError={(e) => {
-                    (e.target as any).src = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600";
-                  }}
-                />
-             </motion.div>
-          </div>
-        </motion.div>
+          <motion.div 
+            className={styles.right}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <div className={styles.visualContainer}>
+              <div className={styles.cosmicPortal}>
+                <div className={styles.outerCircle}></div>
+                <div className={styles.innerCircle}></div>
+                {/* Removed centerSun and Image */}
+
+                {/* Floating Zodiac Symbols */}
+                {[...Array(12)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className={styles.zodiacPoint}
+                    style={{
+                      top: `${50 + 40 * Math.sin((i * 30 * Math.PI) / 180)}%`,
+                      left: `${50 + 40 * Math.cos((i * 30 * Math.PI) / 180)}%`,
+                    }}
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      opacity: [0.3, 0.7, 0.3],
+                    }}
+                    transition={{
+                      duration: 3,
+                      delay: i * 0.2,
+                      repeat: Infinity,
+                    }}
+                  />
+                ))}
+              </div>
+              <div className={styles.floatingParticles}>
+                {[...Array(15)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className={styles.particle}
+                    initial={{ 
+                      x: Math.random() * 400 - 200, 
+                      y: Math.random() * 400 - 200,
+                      opacity: 0 
+                    }}
+                    animate={{ 
+                      y: [0, -40, 0],
+                      opacity: [0, 1, 0]
+                    }}
+                    transition={{
+                      duration: 3 + Math.random() * 2,
+                      repeat: Infinity,
+                      delay: Math.random() * 2
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,32 +1,74 @@
 "use client";
 
-import styles from "./WhyChoose.module.css";
-import { Star, Shield, Clock, Heart } from "lucide-react";
+import React from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import styles from "./WhyChoose.module.css";
+import { UserCheck, Zap, ShieldCheck, HeartPulse } from "lucide-react";
 
 export default function WhyChoose() {
   const { t } = useLanguage();
 
-  const reasons = [
-    { key: "accurate", icon: <Star size={32} /> },
-    { key: "sacred", icon: <Heart size={32} /> },
-    { key: "privacy", icon: <Shield size={32} /> },
-    { key: "experience", icon: <Clock size={32} /> }
+  const features = [
+    { 
+      key: "item1", 
+      icon: <UserCheck size={28} />, 
+      color: "#00A859" 
+    },
+    { 
+      key: "item2", 
+      icon: <Zap size={28} />, 
+      color: "#F58634" 
+    },
+    { 
+      key: "item3", 
+      icon: <HeartPulse size={28} />, 
+      color: "#FFCC29" 
+    },
+    { 
+      key: "item4", 
+      icon: <ShieldCheck size={28} />, 
+      color: "#00A859" 
+    }
   ];
 
   return (
     <section className={styles.whyChoose}>
       <div className="container">
+        <motion.div 
+          className={styles.header}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className={styles.sectionTitle}>{t("why_choose.title")}</h2>
+        </motion.div>
+        
         <div className={styles.grid}>
-          {reasons.map((reason, idx) => (
-            <div key={idx} className={styles.card}>
-              <div className={styles.icon}>{reason.icon}</div>
-              <h3 className={styles.title}>{t(`why_choose.${reason.key}`)}</h3>
-              <p className={styles.desc}>Trustworthy and proven results for thousands of seekers.</p>
-            </div>
+          {features.map((feature, idx) => (
+            <motion.div 
+              key={idx} 
+              className={styles.card}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+            >
+              <div 
+                className={styles.iconWrapper}
+                style={{ backgroundColor: `${feature.color}10`, color: feature.color }}
+              >
+                {feature.icon}
+              </div>
+              <div className={styles.info}>
+                <h3 className={styles.cardTitle}>{t(`why_choose.${feature.key}_title`)}</h3>
+                <p className={styles.cardDesc}>{t(`why_choose.${feature.key}_desc`)}</p>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
