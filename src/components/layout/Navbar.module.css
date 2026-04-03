@@ -10,10 +10,10 @@
 
 .scrolled {
   padding: 1rem 0;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(15px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(11, 22, 35, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(11, 22, 44, 0.05);
 }
 
 .navContainer {
@@ -54,12 +54,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--secondary);
+  background: var(--primary);
   transition: width 0.3s;
 }
 
 .menuItem:hover {
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 .menuItem:hover::after {
@@ -74,7 +74,7 @@
 
 .langToggle {
   display: flex;
-  background: rgba(11, 22, 35, 0.05);
+  background: rgba(11, 22, 44, 0.05);
   padding: 4px;
   border-radius: 50px;
 }
@@ -95,16 +95,16 @@
 }
 
 .bookBtn {
-  background: var(--blue-gradient);
-  color: white;
+  background: var(--primary-gradient);
+  color: var(--secondary);
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 8px 15px rgba(11, 22, 35, 0.15);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .mobileToggle {
@@ -125,7 +125,8 @@
     text-align: center;
     transform: translateY(-150%);
     transition: transform 0.4s var(--transition-smooth);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(11, 22, 44, 0.05);
   }
   
   .menuOpen {
