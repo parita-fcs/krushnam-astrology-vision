@@ -29,8 +29,8 @@ export default function Navbar() {
             <Image 
               src="/assets/logo.png" 
               alt="Krushnam Astrology Vision" 
-              width={100} 
-              height={100} 
+              width={180} 
+              height={180} 
               className={styles.logoImage}
               priority
             />

@@ -1,6 +1,7 @@
 .footer {
   padding: 1rem 0;
   background-color: var(--bg-light);
+  margin-top: auto;
 }
 
 .bottom {
