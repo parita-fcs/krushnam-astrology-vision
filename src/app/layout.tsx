@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
-import DivineBackground from "@/components/decorative/DivineBackground";
-import DivineWisdom from "@/components/decorative/DivineWisdom";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -24,8 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} ${poppins.variable}`}>
         <LanguageProvider>
-          <DivineBackground />
-          <DivineWisdom />
           {children}
         </LanguageProvider>
       </body>

@@ -5,15 +5,22 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./About.module.css";
-import { Quote } from "lucide-react";
+import { ShieldCheck, Target, UserCheck, Sparkles } from "lucide-react";
 
 export default function About() {
   const { t } = useLanguage();
+
+  const badges = [
+    { icon: <ShieldCheck size={20} />, text: "Trusted Advisor" },
+    { icon: <Target size={20} />, text: "Accurate Predictions" },
+    { icon: <UserCheck size={20} />, text: "Personal Guidance" }
+  ];
 
   return (
     <section className={styles.about} id="about">
       <div className={`${styles.container} container`}>
         <div className={styles.grid}>
+          {/* Left Side: Astrologer Image */}
           <motion.div 
             className={styles.left}
             initial={{ opacity: 0, x: -50 }}
@@ -21,83 +28,66 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className={styles.imageStack}>
-              <div className={styles.imageMain}>
-                <Image 
-                  src="/assets/spiritual.jpg" 
-                  alt="Vedic Wisdom" 
-                  width={500}
-                  height={600}
-                  className={styles.mainImg}
-                  onError={(e) => {
-                    (e.target as any).src = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600";
-                  }}
-                />
-              </div>
+            <div className={styles.imageWrapper}>
+              <Image 
+                src="/assets/astrologer.png"
+                alt="Professional Astrologer"
+                width={500}
+                height={600}
+                className={styles.aboutImage}
+              />
               <motion.div 
                 className={styles.experienceBadge}
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, type: "spring" }}
               >
                 <span className={styles.badgeNum}>12+</span>
-                <span className={styles.badgeText}>{t("about.experience")}</span>
+                <span className={styles.badgeText}>Years Exp.</span>
               </motion.div>
-              
-              {/* Cute traditional decor */}
-              <div className={styles.imageDecor}>
-                <motion.div 
-                  className={styles.decorIcon}
-                  animate={{ rotate: [0, 5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <svg viewBox="0 0 40 40" fill="var(--secondary)" width="60">
-                    <path d="M10 15C10 10 30 10 30 15C30 35 10 35 10 15Z" opacity="0.6" />
-                    <path d="M20 15L18 22Q20 25 22 22L20 15Z" fill="white" />
-                  </svg>
-                </motion.div>
-                <div className={styles.decorFlute}>
-                  <svg viewBox="0 0 100 20" fill="var(--secondary)" width="80">
-                    <rect x="5" y="8" width="80" height="2" rx="1" />
-                    <circle cx="20" cy="9" r="0.5" fill="white" />
-                    <circle cx="35" cy="9" r="0.5" fill="white" />
-                  </svg>
-                </div>
-              </div>
             </div>
           </motion.div>
           
+          {/* Right Side: Content */}
           <motion.div 
             className={styles.right}
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className={styles.topLabel}>{t("about.subtitle")}</span>
-            <h2 className={styles.title}>{t("about.title")}</h2>
+            <span className={styles.topLabel}>
+              <Sparkles size={14} style={{ marginRight: '8px' }} />
+              Meet Your Guide
+            </span>
+            <h2 className={styles.title}>Ancient Wisdom <br /> In A Modern World</h2>
             
-            <div className={styles.content}>
-               <p className={styles.desc}>{t("about.desc1")}</p>
-               <p className={styles.desc}>{t("about.desc2")}</p>
+            <p className={styles.desc}>
+              With over 12 years of experience in Vedic astrology, I've helped thousands 
+              of seekers find their true purpose and navigate life's challenges. 
+              My approach combines traditional Indian astrological principles with modern 
+              intuitive understanding to provide clear, actionable guidance.
+            </p>
+
+            {/* Badges as requested */}
+            <div className={styles.badges}>
+              {badges.map((badge, idx) => (
+                <div key={idx} className={styles.badge}>
+                  <div className={styles.badgeIcon}>{badge.icon}</div>
+                  <span>{badge.text}</span>
+                </div>
+              ))}
             </div>
 
-            <div className={styles.quoteWrapper}>
-              <Quote className={styles.quoteIcon} />
-              <blockquote className={styles.quoteText}>
-                {t("about.quote")}
-              </blockquote>
-              <span className={styles.quoteAuthor}>— Shrimad Bhagavad Gita</span>
-            </div>
-
-            <div className={styles.impact}>
-              <div className={styles.impactItem}>
-                <h4 className={styles.impactNum}>5000+</h4>
-                <p className={styles.impactLabel}>{t("about.clients")}</p>
+            <div className={styles.stats}>
+              <div className={styles.statItem}>
+                <span className={styles.statNum}>5000+</span>
+                <span className={styles.statLabel}>Happy Clients</span>
               </div>
-              <div className={styles.impactDivider}></div>
-              <div className={styles.impactItem}>
-                <h4 className={styles.impactNum}>100%</h4>
-                <p className={styles.impactLabel}>Dedication</p>
+              <div className={styles.statItem}>
+                <span className={styles.statNum}>100%</span>
+                <span className={styles.statLabel}>Privacy Assured</span>
               </div>
             </div>
           </motion.div>
@@ -106,4 +96,3 @@ export default function About() {
     </section>
   );
 }
-

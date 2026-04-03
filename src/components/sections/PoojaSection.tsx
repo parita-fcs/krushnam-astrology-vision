@@ -1,60 +1,54 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { useLanguage } from "@/context/LanguageContext";
 import styles from "./PoojaSection.module.css";
-import { 
-  Flame,
-  Wind,
-  Music,
-  Gem
-} from "lucide-react";
+import { Sparkles } from "lucide-react";
+
+const remedies = [
+  {
+    image: "/assets/pooja.png",
+    title: "Vedic Pooja",
+    desc: "Traditional rituals performed with precise Vedic mantras for divine harmony and positive vibrations."
+  },
+  {
+    image: "/assets/havan.png",
+    title: "Sacred Havan",
+    desc: "Purifying fire ceremonies to clear negative energy and bring prosperity to your home and life."
+  },
+  {
+    image: "/assets/gemstones.png",
+    title: "Blessed Gemstones",
+    desc: "Authentic stones prescribed according to your birth chart to balance planetary influences."
+  },
+  {
+    image: "/assets/mantra.png",
+    title: "Mantra Jaap",
+    desc: "Tailored sacred chanting sessions designed to realign your inner energy with cosmic frequencies."
+  }
+];
 
 export default function PoojaSection() {
-  const { t } = useLanguage();
-
-  const remedies = [
-    { 
-      key: "pooja", 
-      icon: <Flame size={32} />, 
-      title: "Vedic Pooja",
-      desc: "Traditional rituals performed with precise Vedic mantras for divine harmony."
-    },
-    { 
-      key: "havan", 
-      icon: <Wind size={32} />, 
-      title: "Sacred Havan",
-      desc: "Purifying fire ceremonies to clear negative energy and bring prosperity."
-    },
-    { 
-      key: "mantra", 
-      icon: <Music size={32} />, 
-      title: "Mantra Jaap",
-      desc: "Powerful sound vibrations tailored to balance your specific planetary shifts."
-    },
-    { 
-      key: "gemstones", 
-      icon: <Gem size={32} />, 
-      title: "Gemstones",
-      desc: "Blessed stones prescribed according to your birth chart for long-term benefit."
-    }
-  ];
-
   return (
     <section className={styles.pooja} id="pooja">
-      <div className={styles.glowOverlay}></div>
-      
       <div className={`${styles.container} container`}>
         <motion.div 
           className={styles.header}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <span className={styles.topLabel}>Sacred Remedies</span>
-          <h2 className={styles.title}>Spiritual Solutions</h2>
-          <p className={styles.subtitle}>Bringing peace and balance through traditional Vedic wisdom</p>
+          <span className={styles.topLabel}>
+            <Sparkles size={14} style={{ marginRight: '8px' }} />
+            Sacred Remedies
+          </span>
+          <h2 className={styles.title}>Spiritual Healing & <br /> Divine Rituals</h2>
+          <p className={styles.subtitle}>
+            Bringing peace, balance, and prosperity through ancient Vedic rituals 
+            and time-tested spiritual remedies.
+          </p>
         </motion.div>
         
         <div className={styles.grid}>
@@ -62,19 +56,23 @@ export default function PoojaSection() {
             <motion.div 
               key={index}
               className={styles.card}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className={styles.smokeEffect}></div>
+              <div className={styles.imageBox}>
+                <Image 
+                  src={item.image}
+                  alt={item.title}
+                  width={400}
+                  height={300}
+                  className={styles.cardImage}
+                />
+              </div>
               <div className={styles.cardContent}>
-                <div className={styles.iconBox}>{item.icon}</div>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p className={styles.cardDesc}>{item.desc}</p>
-                <button className={styles.bookBtn}>
-                  Learn More
-                </button>
               </div>
             </motion.div>
           ))}
