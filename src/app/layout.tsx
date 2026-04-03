@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Poppins } from "next/font/google";
+import { Inter, Playfair_Display, Poppins, Cinzel, Marcellus } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-poppins" });
+const cinzel = Cinzel({ subsets: ["latin"], variable: "--font-cinzel", weight: ["400", "500", "600", "700", "800", "900"] });
+const marcellus = Marcellus({ subsets: ["latin"], variable: "--font-marcellus", weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Krushnam Astrology Vision | Trusted Vedic Astrology & Vastu Services",
@@ -20,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} ${poppins.variable}`}>
+      <body className={`${inter.variable} ${playfair.variable} ${poppins.variable} ${cinzel.variable} ${marcellus.variable}`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

@@ -1,11 +1,11 @@
 {
   "nav": {
     "home": "Home",
+    "about": "About Us",
     "services": "Services",
-    "about": "About",
-    "contact": "Contact",
-    "kundli": "Kundli",
-    "pooja": "Remedies"
+    "gallery": "Gallery",
+    "contact": "Contact Us",
+    "book_now": "Book Now"
   },
   "hero": {
     "title": "Discover Your Destiny with Krushnam",

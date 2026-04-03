@@ -26,15 +26,35 @@ export default function Navbar() {
       <div className={`${styles.navContainer} container`}>
         <div className={styles.logoBox}>
           <Link href="#home">
-            <h2 className={styles.logoText}>KRUSHNAM<span> VISION</span></h2>
+            <Image 
+              src="/assets/logo.png" 
+              alt="Krushnam Astrology Vision" 
+              width={100} 
+              height={100} 
+              className={styles.logoImage}
+              priority
+            />
           </Link>
         </div>
 
         <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ""}`}>
+          <div className={styles.mobileActions}>
+            <div className={styles.langToggleMobile}>
+              {["en", "hi"].map((lang) => (
+                <button
+                  key={lang}
+                  className={`${styles.langBtn} ${language === lang ? styles.langBtnActive : ""}`}
+                  onClick={() => setLanguage(lang as any)}
+                >
+                  {lang.toUpperCase()}
+                </button>
+              ))}
+            </div>
+          </div>
           <li><Link href="#home" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.home")}</Link></li>
           <li><Link href="#about" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.about")}</Link></li>
           <li><Link href="#services" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.services")}</Link></li>
-          <li><Link href="#kundli" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.kundli")}</Link></li>
+          <li><Link href="#gallery" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.gallery")}</Link></li>
           <li><Link href="#contact" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.contact")}</Link></li>
         </ul>
 
@@ -52,13 +72,13 @@ export default function Navbar() {
           </div>
           
           <div className={styles.ctaGroup}>
-            <Link href="#kundli">
+            <Link href="#contact">
                <motion.button 
                  whileHover={{ scale: 1.05 }}
                  className={styles.bookBtn}
                >
                  <Sparkles size={16} />
-                 <span>Get Kundli</span>
+                 <span>{t("nav.book_now")}</span>
                </motion.button>
             </Link>
             
@@ -68,6 +88,19 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      
+      {/* Mobile Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div 
+            className={styles.overlay}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
