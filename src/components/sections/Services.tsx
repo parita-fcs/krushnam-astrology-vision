@@ -5,48 +5,55 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./Services.module.css";
 import { 
-  FileText, 
-  Calendar, 
-  Heart, 
-  Briefcase, 
-  Compass, 
-  Sparkles 
+  Scroll, 
+  Sparkle, 
+  Flame, 
+  Navigation, 
+  HeartHandshake, 
+  TrendingUp,
+  Star
 } from "lucide-react";
 
 const services = [
   {
-    icon: <FileText size={32} />,
-    color: "#00A859",
-    title: "Kundli Analysis",
-    desc: "Detailed birth chart analysis to understand your planetary positions and their influence on your life events."
+    icon: <Scroll size={32} />,
+    color: "#C5A059",
+    title: "Janam Kundli Analysis",
+    desc: "Detailed birth chart analysis to understand your planetary positions and life path."
   },
   {
-    icon: <Calendar size={32} />,
-    color: "#F58634",
-    title: "Horoscope Reading",
-    desc: "Daily, monthly, and yearly predictions to help you navigate through various phases of life with clarity."
+    icon: <Sparkle size={32} />,
+    color: "#C5A059",
+    title: "Vedic Pooja & Yagya",
+    desc: "Ancient Vedic rituals performed for spiritual purification and divine blessings."
   },
   {
-    icon: <Heart size={32} />,
-    color: "#FFCC29",
-    title: "Love Compatibility",
-    desc: "Understand the harmony between partners using advanced Vedic matching techniques for a soulful journey."
+    icon: <Flame size={32} />,
+    color: "#C5A059",
+    title: "Karmakand Vidhi",
+    desc: "Traditional ritualistic performances including Sanskaras and other sacred ceremonies."
   },
   {
-    icon: <Briefcase size={32} />,
-    color: "#00A859",
-    title: "Career Guidance",
-    desc: "Find the right profession and success periods based on your tenth house and planetary transits."
-  },
-  {
-    icon: <Compass size={32} />,
-    color: "#F58634",
+    icon: <Navigation size={32} />,
+    color: "#C5A059",
     title: "Vastu Consultation",
-    desc: "Create positive energy in your home or workspace with ancient wisdom for prosperity and health."
+    desc: "Enhance positive energy in your property using authentic Vastu Shastra principles."
+  },
+  {
+    icon: <HeartHandshake size={32} />,
+    color: "#C5A059",
+    title: "Marriage Matching",
+    desc: "Vedic Gun Milan and compatibility analysis for a prosperous married life."
+  },
+  {
+    icon: <TrendingUp size={32} />,
+    color: "#C5A059",
+    title: "Business & Career Guidance",
+    desc: "Astrological insights to overcome career hurdles and achieve business growth."
   }
 ];
 
-export default function Services() {
+export default function Services({ isPage = false }: { isPage?: boolean }) {
   const { t } = useLanguage();
 
   return (
@@ -54,10 +61,12 @@ export default function Services() {
       <div className={`${styles.container} container`}>
         <div className={styles.header}>
           <div className={styles.topLabel}>
-            <Sparkles size={16} />
+            <Star size={16} />
             <span>Sacred Services</span>
           </div>
-          <h2 className={styles.title}>Spiritual Solutions <br /> For Your Life Journey</h2>
+          <h2 className={styles.title}>
+            {isPage ? "Explore All Our Spiritual Services" : "Spiritual Solutions For Your Life Journey"}
+          </h2>
           <p className={styles.subtitle}>
             Explore our range of personalized astrology services rooted in ancient 
             Vedic traditions and modern insights.
@@ -86,6 +95,14 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
+
+        {!isPage && (
+          <div className={styles.viewAllWrapper}>
+            <a href="/services" className={styles.viewAllBtn}>
+              View All Sacred Services
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

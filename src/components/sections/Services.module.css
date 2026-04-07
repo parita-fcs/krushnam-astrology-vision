@@ -71,8 +71,8 @@
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 168, 89, 0.08);
-  border-color: rgba(0, 168, 89, 0.2);
+  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15);
+  border-color: rgba(197, 160, 89, 0.3);
 }
 
 .iconBox {
@@ -84,20 +84,24 @@
   border-radius: 50%;
   margin-bottom: 2rem;
   transition: all 0.4s var(--transition-smooth);
+  box-shadow: inset 0 0 15px rgba(197, 160, 89, 0.1);
 }
 
 .card:hover .iconBox {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
+  background-color: var(--primary) !important;
+  color: white !important;
 }
 
 .cardTitle {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: var(--text-dark);
+  color: var(--secondary);
+  font-family: var(--font-cinzel), serif;
 }
 
 .cardDesc {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -108,7 +112,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at top right, rgba(255, 204, 41, 0.1), transparent 70%);
+  background: radial-gradient(circle at top right, rgba(197, 160, 89, 0.1), transparent 70%);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.4s var(--transition-smooth);
@@ -116,6 +120,33 @@
 
 .card:hover .cardGlow {
   opacity: 1;
+}
+
+.viewAllWrapper {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.viewAllBtn {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  background-color: transparent;
+  color: var(--secondary);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-full);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s var(--transition-smooth);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.viewAllBtn:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
 }
 
 @media (max-width: 768px) {

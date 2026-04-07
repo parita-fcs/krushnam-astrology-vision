@@ -7,9 +7,31 @@ import Services from "@/components/sections/Services";
 
 export default function ServicesPage() {
   return (
-    <main style={{ paddingTop: "80px" }}>
+    <main>
       <Navbar />
-      <Services />
+      
+      {/* Services Page Header */}
+      <section style={{ 
+        padding: "160px 0 80px", 
+        background: "linear-gradient(rgba(11, 22, 44, 0.9), rgba(11, 22, 44, 0.9)), url('/assets/astrology_slide_1.png')",
+        backgroundSize: "cover",
+        color: "white",
+        textAlign: "center"
+      }}>
+        <div className="container">
+          <h1 style={{ fontFamily: "var(--font-cinzel), serif", fontSize: "3.5rem", marginBottom: "1rem" }}>
+            Our Sacred Services
+          </h1>
+          <p style={{ fontSize: "1.2rem", maxWidth: "700px", margin: "0 auto", opacity: 0.8 }}>
+            Comprehensive Vedic solutions for health, wealth, relationships, and spiritual growth.
+          </p>
+        </div>
+      </section>
+
+      <div style={{ backgroundColor: "#fff" }}>
+        <Services isPage={true} />
+      </div>
+      
       <Footer />
     </main>
   );
