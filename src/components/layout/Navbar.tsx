@@ -25,7 +25,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`${styles.navContainer} container`}>
         <div className={styles.logoBox}>
-          <Link href="#home">
+          <Link href="/">
             <Image 
               src="/assets/logo.png" 
               alt="Krushnam Astrology Vision" 
@@ -51,11 +51,11 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-          <li><Link href="#home" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.home")}</Link></li>
-          <li><Link href="#about" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.about")}</Link></li>
-          <li><Link href="#services" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.services")}</Link></li>
-          <li><Link href="#gallery" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.gallery")}</Link></li>
-          <li><Link href="#contact" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.contact")}</Link></li>
+          <li><Link href="/" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.home")}</Link></li>
+          <li><Link href="/about" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.about")}</Link></li>
+          <li><Link href="/services" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.services")}</Link></li>
+          <li><Link href="/gallery" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.gallery")}</Link></li>
+          <li><Link href="/contact" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.contact")}</Link></li>
         </ul>
 
         <div className={styles.actions}>
