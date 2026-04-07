@@ -1,103 +1,94 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./Hero.module.css";
-import { ArrowRight, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
-
-const slides = [
-  {
-    image: "/assets/astrology_slide_1.png",
-    titleKey: "hero.slide1.title",
-    descKey: "hero.slide1.desc",
-    defaultTitle: "Vedic Astrology Guidance",
-    defaultDesc: "Unlock your future with profound Vedic insights and precise birth chart analysis."
-  },
-  {
-    image: "/assets/astrology_slide_2.png",
-    titleKey: "hero.slide2.title",
-    descKey: "hero.slide2.desc",
-    defaultTitle: "Cosmic Insights",
-    defaultDesc: "Understand the movements of the stars and how they influence your life path."
-  },
-  {
-    image: "/assets/astrology_slide_3.png",
-    titleKey: "hero.slide3.title",
-    descKey: "hero.slide3.desc",
-    defaultTitle: "Divine Wisdom",
-    defaultDesc: "Blend traditional Indian spiritual teachings with modern intuitive guidance."
-  },
-  {
-    image: "/assets/astrology_slide_4.png",
-    titleKey: "hero.slide4.title",
-    descKey: "hero.slide4.desc",
-    defaultTitle: "Find Your Path",
-    defaultDesc: "Empower yourself with celestial clarity to navigate life's complexities."
-  }
-];
+import { Sparkles, Sun, Moon, Feather } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   const { t } = useLanguage();
-  const [current, setCurrent] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
 
-  const nextSlide = useCallback(() => {
-    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(nextSlide, 6000);
-    return () => clearInterval(timer);
-  }, [nextSlide]);
+  const springConfig = { damping: 25, stiffness: 120 };
+  const y1 = useSpring(useTransform(scrollYProgress, [0, 1], [0, 250]), springConfig);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   return (
-    <section className={styles.hero} id="home">
-      <div className={styles.sliderContainer}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            className={styles.slide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2 }}
-          >
-            <Image
-              src={slides[current].image}
-              alt="Astrology Slide"
-              fill
-              className={styles.slideImage}
-              priority
-            />
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Navigation Controls */}
-        <button className={`${styles.navBtn} ${styles.prev}`} onClick={prevSlide}>
-          <ChevronLeft size={24} />
-        </button>
-        <button className={`${styles.navBtn} ${styles.next}`} onClick={nextSlide}>
-          <ChevronRight size={24} />
-        </button>
-
-        {/* Indicators */}
-        <div className={styles.indicators}>
-          {slides.map((_, index) => (
-            <div
-              key={index}
-              className={`${styles.dot} ${current === index ? styles.dotActive : ""}`}
-              onClick={() => setCurrent(index)}
-            />
-          ))}
+    <section className={styles.hero} ref={containerRef} id="home">
+      {/* Deep Background Layer */}
+      <div className={styles.plainBg} />
+      
+      {/* Decorative Atmosphere Icons */}
+      <div className={styles.floatingElements}>
+        <div className={`${styles.floatIcon} ${styles.icon1}`}>
+          <Sun size={24} strokeWidth={1} />
         </div>
+        <div className={`${styles.floatIcon} ${styles.icon2}`}>
+          <Moon size={20} strokeWidth={1} />
+        </div>
+        <div className={`${styles.floatIcon} ${styles.icon3}`}>
+          <Feather size={28} strokeWidth={1.5} color="#C5A059" /> 
+        </div>
+      </div>
 
-        {/* Scroll Indicator */}
+      <div className={`${styles.gridContainer} container`}>
+        {/* Left Side: Divine Iconic Presence */}
+        <motion.div 
+          className={styles.visualColumn}
+          initial={{ opacity: 0, x: -30, scale: 0.95 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <div className={styles.krishnaWrapper}>
+             <Image 
+                src="/assets/krishna_silhouette.png" 
+                alt="Lord Krishna Silhouette" 
+                width={500} 
+                height={500} 
+                className={styles.krishnaImg}
+                priority
+             />
+             <div className={styles.divineGlow} />
+          </div>
+        </motion.div>
 
+        {/* Right Side: Sacred Wisdom Content */}
+        <motion.div 
+          style={{ y: y1, opacity }}
+          className={styles.textColumn}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+        >          
+          <div className={styles.slokContent}>
+            <div className={styles.verticalLine} />
+            <div className={styles.slokWrap}>
+              <h1 className={styles.slokTitleColumn}>
+                कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। <br />
+                <span className={styles.goldenHighlight}>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥</span>
+              </h1>
+
+              <p className={styles.slokMeaningColumn}>
+                 "You have a right to perform your prescribed duties, but <br />
+                 you are not entitled to the fruits of your actions." — Gita 2.47
+              </p>
+
+              <div className={styles.ctaWrapper}>
+                <Link href="/services" className={styles.premiumBtnSmall}>
+                  <span>Explore Services</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
