@@ -156,7 +156,43 @@
 }
 
 @media (max-width: 768px) {
+  .services {
+    padding: 6rem 0;
+  }
+  
+  .header {
+    margin-bottom: 4rem;
+  }
+
   .title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 3rem 2rem;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  .viewAllBtn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
   }
 }

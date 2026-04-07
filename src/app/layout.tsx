@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   keywords: ["astrology", "vedic astrology", "vastu", "pooja", "kundli", "krushnam astrology"],
 };
 
+import BottomNav from "@/components/layout/BottomNav";
+import WhatsAppFAB from "@/components/common/WhatsAppFAB";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,6 +28,8 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} ${poppins.variable} ${cinzel.variable} ${marcellus.variable}`}>
         <LanguageProvider>
           {children}
+          <WhatsAppFAB />
+          <BottomNav />
         </LanguageProvider>
       </body>
     </html>

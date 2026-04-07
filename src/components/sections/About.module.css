@@ -152,15 +152,34 @@
 
 @media (max-width: 640px) {
   .title {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .desc {
+    font-size: 1rem;
+    text-align: center;
   }
   
   .badges {
-    gap: 1rem;
+    justify-content: center;
   }
   
   .badge {
+    justify-content: center;
     width: 100%;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .moreBtnWrapper {
+    display: flex;
+    justify-content: center;
   }
 }
 

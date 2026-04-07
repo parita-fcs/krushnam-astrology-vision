@@ -207,32 +207,39 @@
   }
 
   .logoImage {
-    max-width: 120px;
+    max-width: 130px;
+    max-height: 60px;
   }
 
-  .mobileActions {
-    display: block;
-    margin-bottom: 2rem;
+  .menu {
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    height: 70vh;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
   }
 
-  .langToggleMobile {
-    display: flex;
-    background: rgba(11, 22, 44, 0.05);
-    padding: 4px;
-    border-radius: 50px;
-    width: fit-content;
-    margin: 0 auto;
+  .menu .menuItem {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    text-shadow: none;
   }
 
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
-    z-index: 1000;
+  .bookBtn span {
+    display: none;
+  }
+  
+  .bookBtn {
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoImage {
+    max-width: 110px;
+  }
+  
+  .actions {
+    gap: 0.5rem;
   }
 }
 

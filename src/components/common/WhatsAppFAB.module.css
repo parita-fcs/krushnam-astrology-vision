@@ -1,0 +1,53 @@
+.fabWrapper {
+  position: fixed;
+  bottom: 85px; /* Above the bottom nav bar */
+  right: 20px;
+  z-index: 1001;
+}
+
+.fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: #25D366; /* WhatsApp Green */
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.fab:hover {
+  transform: scale(1.1);
+  background-color: #1ebe57;
+}
+
+.tooltip {
+  position: absolute;
+  right: 70px;
+  background: #333;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+}
+
+.fab:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .fabWrapper {
+    bottom: 85px;
+    right: 15px;
+  }
+}
