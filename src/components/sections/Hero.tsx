@@ -97,21 +97,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div 
-          className={styles.scrollIndicator}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 1 }}
-        >
-          <div className={styles.mouse}>
-            <motion.div 
-              className={styles.wheel}
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </div>
-          <span>Scroll Down</span>
-        </motion.div>
+
       </div>
     </section>
   );

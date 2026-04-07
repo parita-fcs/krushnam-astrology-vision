@@ -1,10 +1,10 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About Us",
+    "about": "About",
     "services": "Services",
     "gallery": "Gallery",
-    "contact": "Contact Us",
+    "contact": "Contact",
     "book_now": "Book Now"
   },
   "hero": {
