@@ -5,15 +5,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./About.module.css";
-import { ShieldCheck, Target, UserCheck, Sparkles } from "lucide-react";
+import { ShieldCheck, Target, UserCheck, Sparkles, ArrowRight } from "lucide-react";
 
 export default function About() {
   const { t } = useLanguage();
 
   const badges = [
-    { icon: <ShieldCheck size={20} />, text: "Trusted Advisor" },
-    { icon: <Target size={20} />, text: "Accurate Predictions" },
-    { icon: <UserCheck size={20} />, text: "Personal Guidance" }
+    { icon: <ShieldCheck size={20} />, text: t("about.badge1") },
+    { icon: <Target size={20} />, text: t("about.badge2") },
+    { icon: <UserCheck size={20} />, text: t("about.badge3") }
   ];
 
   return (
@@ -43,8 +43,8 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, type: "spring" }}
               >
-                <span className={styles.badgeNum}>12+</span>
-                <span className={styles.badgeText}>Years Exp.</span>
+                <span className={styles.badgeNum}>{t("about.exp_years")}</span>
+                <span className={styles.badgeText}>{t("about.exp_label")}</span>
               </motion.div>
             </div>
           </motion.div>
@@ -59,15 +59,12 @@ export default function About() {
           >
             <span className={styles.topLabel}>
               <Sparkles size={14} style={{ marginRight: '8px' }} />
-              Meet Your Guide
+              {t("about.meet_guide")}
             </span>
-            <h2 className={styles.title}>Ancient Wisdom <br /> In A Modern World</h2>
+            <h2 className={styles.title}>{t("about.astrologer_name")}</h2>
             
             <p className={styles.desc}>
-              With over 12 years of experience in Vedic astrology, I've helped thousands 
-              of seekers find their true purpose and navigate life's challenges. 
-              My approach combines traditional Indian astrological principles with modern 
-              intuitive understanding to provide clear, actionable guidance.
+              {t("about.bio")}
             </p>
 
             {/* Badges as requested */}
@@ -83,12 +80,18 @@ export default function About() {
             <div className={styles.stats}>
               <div className={styles.statItem}>
                 <span className={styles.statNum}>5000+</span>
-                <span className={styles.statLabel}>Happy Clients</span>
+                <span className={styles.statLabel}>{t("about.stat1_label")}</span>
               </div>
               <div className={styles.statItem}>
                 <span className={styles.statNum}>100%</span>
-                <span className={styles.statLabel}>Privacy Assured</span>
+                <span className={styles.statLabel}>{t("about.stat2_label")}</span>
               </div>
+            </div>
+
+            <div className={styles.moreBtnWrapper}>
+              <a href="/about" className={styles.moreBtn}>
+                {t("about.more_btn")} <ArrowRight size={16} />
+              </a>
             </div>
           </motion.div>
         </div>

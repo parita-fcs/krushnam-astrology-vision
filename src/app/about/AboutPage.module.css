@@ -1,0 +1,232 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--bg-light);
+}
+
+.pageHeader {
+  padding: 10rem 0 5rem;
+  background: linear-gradient(135deg, var(--secondary) 0%, #080D1A 100%);
+  text-align: center;
+  color: #fff;
+  clip-path: ellipse(110% 80% at 50% 20%);
+}
+
+.pageTitle {
+  font-size: 3.5rem;
+  font-family: var(--font-cinzel), serif;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+/* Section Headers */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-family: var(--font-cinzel), serif;
+  color: var(--secondary);
+  margin-top: 0.5rem;
+}
+
+.subtitle {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Timeline */
+.timelineSection {
+  padding: 8rem 0;
+  background-color: #fff;
+  position: relative;
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--primary) 10%, var(--primary) 90%, transparent);
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50%;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.timelineItem:nth-child(even) {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 50%;
+}
+
+.timeYear {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+  border: 4px solid #fff;
+}
+
+.timeContent {
+  width: 80%;
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  margin-right: 40px;
+  box-shadow: var(--shadow-soft);
+  border-bottom: 3px solid var(--primary);
+}
+
+.timelineItem:nth-child(even) .timeContent {
+  margin-right: 0;
+  margin-left: 40px;
+}
+
+.timeContent h3 {
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.timeContent p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Values */
+.valuesSection {
+  padding: 8rem 0;
+  background-color: var(--bg-cream);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.valueCard {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: all 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.valueCard:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-medium);
+}
+
+.valueIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.valueCard h3 {
+  font-family: var(--font-cinzel), serif;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.valueCard p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Philosophy */
+.philosophySection {
+  padding: 10rem 0;
+  background: linear-gradient(rgba(11, 22, 44, 0.95), rgba(11, 22, 44, 0.95)), url('/assets/astrology_slide_3.png');
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+}
+
+.philosophyContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.philosophyContent .sectionTitle {
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.philosophyContent p {
+  font-size: 1.2rem;
+  line-height: 2;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timelineItem {
+    justify-content: flex-start;
+    padding-left: 80px;
+    padding-right: 0;
+  }
+  
+  .timelineItem:nth-child(even) {
+    padding-left: 80px;
+  }
+  
+  .timeYear {
+    left: 30px;
+  }
+  
+  .timeContent {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2.5rem;
+  }
+}

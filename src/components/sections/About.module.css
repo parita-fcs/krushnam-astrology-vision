@@ -163,3 +163,30 @@
     width: 100%;
   }
 }
+
+.moreBtnWrapper {
+  margin-top: 2.5rem;
+}
+
+.moreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius-full);
+  font-family: var(--font-cinzel), serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  transition: all 0.3s var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+}
+
+.moreBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(197, 160, 89, 0.5);
+  background: var(--accent);
+}
