@@ -1,4 +1,7 @@
 {
+  "common": {
+    "learn_more": "Learn More"
+  },
   "nav": {
     "home": "Home",
     "about": "About",
@@ -110,5 +113,78 @@
     "message": "How can we help you?",
     "submit": "Send Message",
     "whatsapp": "Chat on WhatsApp"
+  },
+  "service_detail": {
+    "back": "Back to Services",
+    "book_title": "Book Consultation",
+    "book_subtitle": "Speak with Shastri Shree Amit B. Trivedi today for expert guidance.",
+    "call_now": "Call Now",
+    "schedule": "Schedule Meeting",
+    "overview": "Service Overview",
+    "benefits": "Key Benefits",
+    "process": "Consultation Process",
+    "janam_kundli_analysis": {
+      "title": "Janam Kundli Analysis",
+      "subtitle": "Unlock Your Destiny Through Planetary Wisdom",
+      "description": "Your Janam Kundali is a cosmic blueprint of your life. Our expert analysis helps you understand your strengths, weaknesses, and the timing of major life events based on precise planetary positions at your birth.",
+      "benefits": ["Understand life purpose", "Identify career strengths", "Timing for major decisions", "Remedial measures for doshas"],
+      "process": ["Share birth details", "Detailed birth chart calculation", "Personal consultation session", "Printed report with remedies"]
+    },
+    "vedic_pooja_yagya": {
+      "title": "Vedic Pooja & Yagya",
+      "subtitle": "Divine Blessings for Peace and Prosperity",
+      "description": "Sacred Vedic rituals performed with authentic mantras and pure intentions to invoke divine energies for your well-being and success.",
+      "benefits": ["Spiritual purification", "Removal of obstacles", "Positive energy in home/work", "Peace of mind"],
+      "process": ["Topic selection", "Sankalpa (Intention)", "Mantra Chanting", "Aarti and Prasad"]
+    },
+    "karmakand_vidhi": {
+      "title": "Karmakand Vidhi",
+      "subtitle": "Traditional Sacred Rituals Done Right",
+      "description": "Expert performance of all Sanskaras and Vedic ceremonies following rigid scriptural traditions for maximum spiritual impact.",
+      "benefits": ["Upholding traditions", "Correct ritual execution", "Guidance on karmic duties", "Authentic Vedic environment"],
+      "process": ["Ritual identification", "Preparation of Pujan Samagri", "Step-by-step ceremony", "Final blessings"]
+    },
+    "vastu_consultation": {
+      "title": "Vastu Consultation",
+      "subtitle": "Harmonize Your Environment for Success",
+      "description": "Align your living or workspace with the five elements (Pancha Bhoota) to attract health, wealth, and happiness into your life.",
+      "benefits": ["Improved flow of wealth", "Better family health", "Career growth acceleration", "Resolved structural energies"],
+      "process": ["Site visit/Map review", "Energy analysis", "Corrective recommendations", "Vastu remedies installation"]
+    },
+    "marriage_matching": {
+      "title": "Marriage Matching",
+      "subtitle": "Guna Milan for Lifelong Harmony",
+      "description": "Ensure marital bliss using Vedic Ashtakoota matching to analyze emotional, spiritual, and financial compatibility between partners.",
+      "benefits": ["Emotional alignment", "Financial stability check", "Family compatibility", "Dosha identification (Manglik/Nadi)"],
+      "process": ["Dual Kundli calculation", "Guna Milan scoring", "Dosha analysis", "Final recommendation report"]
+    },
+    "business_career_guidance": {
+      "title": "Business & Career Guidance",
+      "subtitle": "Cosmic Strategy for Professional Growth",
+      "description": "Identify the right profession and identify periods of peak performance to maximize your career success and business stability.",
+      "benefits": ["Right career path selection", "Peak period identification", "Overcoming professional hurdles", "Business expansion timing"],
+      "process": ["D-10 Chart analysis", "Dasha period review", "Obstacle identification", "Strategic career planning"]
+    },
+    "gemstone_advice": {
+      "title": "Gemstone Advice",
+      "subtitle": "Planetary Power in Your Palm",
+      "description": "Scientific and astrological recommendation of precious gemstones to strengthen your auspicious planets and neutralize harmful influences.",
+      "benefits": ["Bolster weak planets", "Protect against negativity", "Enhance mental clarity", "Attract desired opportunities"],
+      "process": ["Detailed chart review", "Planet strength analysis", "Gemstone selection", "Energizing and wearing guidance"]
+    },
+    "tarot_reading": {
+      "title": "Tarot Reading",
+      "subtitle": "Intuitive Guidance for Life's Questions",
+      "description": "Gain deeper insights into your subconscious and current energy patterns to find clear answers for love, career, and personal choices.",
+      "benefits": ["Clarify complex situations", "Understand current energy", "Decision making support", "Future path visualization"],
+      "process": ["Question framing", "Card selection", "Detailed interpretation", "Actionable advice"]
+    },
+    "numerology": {
+      "title": "Numerology",
+      "subtitle": "The Science of Vibrational Success",
+      "description": "Harness the power of numbers by correcting your name spelling and identifying your lucky dates to resonate with success and harmony.",
+      "benefits": ["Name spelling optimization", "Lucky numbers for business", "Understanding life path number", "Harmonious signature design"],
+      "process": ["Date of birth analysis", "Full name evaluation", "Resonating vibration check", "Name correction recommendation"]
+    }
   }
 }

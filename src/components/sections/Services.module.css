@@ -1,27 +1,30 @@
 .services {
-  padding: 8rem 0;
-  background: white;
+  padding: 10rem 0;
+  background-color: #fff;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(197, 160, 89, 0.02) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(197, 160, 89, 0.02) 0%, transparent 40%);
   position: relative;
   overflow: hidden;
 }
 
-.services::after {
+.services::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(var(--primary) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.02;
+  background: radial-gradient(rgba(197, 160, 89, 0.1) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.1;
   pointer-events: none;
 }
 
 .header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 5rem;
+  max-width: 800px;
+  margin: 0 auto 6rem;
 }
 
 .topLabel {
@@ -29,124 +32,127 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--secondary);
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
+  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
 }
 
 .title {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-dark);
+  font-size: 3.5rem;
+  font-family: var(--font-cinzel), serif;
+  margin-bottom: 2rem;
+  color: var(--secondary);
+  line-height: 1.2;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
 }
 
 .card {
   position: relative;
-  padding: 3rem 2.5rem;
-  background: white;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-  transition: all 0.4s var(--transition-smooth);
+  padding: 4rem 2.5rem;
+  background: #fff;
+  border-radius: 30px;
+  border: 1.5px solid rgba(197, 160, 89, 0.3);
+  transition: all 0.5s var(--transition-smooth);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  z-index: 1;
+  align-items: flex-start;
+  text-align: left;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15);
-  border-color: rgba(197, 160, 89, 0.3);
+  transform: translateY(-15px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--primary);
+  box-shadow: 0 20px 50px rgba(197, 160, 89, 0.2);
 }
 
 .iconBox {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin-bottom: 2rem;
-  transition: all 0.4s var(--transition-smooth);
-  box-shadow: inset 0 0 15px rgba(197, 160, 89, 0.1);
+  margin-bottom: 2.5rem;
+  color: var(--primary);
+  transition: all 0.4s;
 }
 
 .card:hover .iconBox {
   transform: scale(1.1) rotate(5deg);
-  background-color: var(--primary) !important;
-  color: white !important;
+  filter: drop-shadow(0 0 10px var(--primary));
 }
 
 .cardTitle {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--secondary);
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  color: var(--primary);
   font-family: var(--font-cinzel), serif;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .cardDesc {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
 }
 
-.cardGlow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top right, rgba(197, 160, 89, 0.1), transparent 70%);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s var(--transition-smooth);
+.cardLink {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s;
 }
 
-.card:hover .cardGlow {
-  opacity: 1;
+.cardLink:hover {
+  gap: 1.2rem;
+  text-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
 }
 
 .viewAllWrapper {
-  margin-top: 5rem;
+  margin-top: 6rem;
   text-align: center;
 }
 
 .viewAllBtn {
-  display: inline-block;
-  padding: 1.2rem 3rem;
-  background-color: transparent;
-  color: var(--secondary);
-  border: 2px solid var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 3.5rem;
+  background-color: var(--primary);
+  color: #0b162c;
   border-radius: var(--radius-full);
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
-  transition: all 0.3s var(--transition-smooth);
+  transition: all 0.3s;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .viewAllBtn:hover {
-  background-color: var(--primary);
-  color: white;
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
+  box-shadow: 0 10px 30px rgba(197, 160, 89, 0.4);
+  background-color: #fff;
+  color: var(--secondary);
 }
 
 @media (max-width: 768px) {
