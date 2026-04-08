@@ -32,7 +32,7 @@ export default function AboutPage() {
             transition={{ delay: 0.4, duration: 1 }}
             className={styles.breadcrumb}
           >
-            Home / About
+            {t("nav.home")} / {t("nav.about")}
           </motion.div>
         </div>
       </section>

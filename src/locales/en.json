@@ -18,6 +18,7 @@
   },
   "about": {
     "page_title": "About Our Spiritual Journey",
+    "page_description": "A legacy of Vedic wisdom passed down through generations to guide your path.",
     "title": "A Legacy of Spiritual Wisdom",
     "subtitle": "Guided by Krishna's Eternal Light",
     "desc1": "Shastri Shree Amit B. Trivedi is a distinguished Vedic Astrologer with over 12 years of profound experience in guiding souls through the celestial paths of Sanatana Dharma.",
@@ -106,6 +107,11 @@
     "calculate": "Generate Kundli",
     "zodiac": "Select Your Zodiac"
   },
+  "gallery": {
+    "title": "Our Sacred Gallery",
+    "description": "Capturing moments of spiritual guidance, Vedic rituals, and divine connections.",
+    "updating": "Our gallery is being updated with sacred moments and spiritual events. Please visit soon!"
+  },
   "testimonials": {
     "title": "Transformative Experiences",
     "subtitle": "Hear from those who found their path through our guidance"
@@ -113,6 +119,8 @@
   "contact": {
     "title": "Let's Begin Your Journey",
     "subtitle": "Reach out for a personal consultation or any queries",
+    "page_header": "Get In Touch",
+    "page_description": "We are here to guide you on your journey. Reach out for consultations, pooja bookings, or any queries.",
     "name": "Your Name",
     "email": "Email Address",
     "message": "How can we help you?",

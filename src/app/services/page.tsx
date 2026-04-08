@@ -4,7 +4,9 @@ import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Services from "@/components/sections/Services";
+import styles from "@/components/layout/PageHeader.module.css";
 import { useLanguage } from "@/context/LanguageContext";
+import { motion } from "framer-motion";
 
 export default function ServicesPage() {
   const { t } = useLanguage();
@@ -13,21 +15,25 @@ export default function ServicesPage() {
     <main>
       <Navbar />
       
-      {/* Services Page Header */}
-      <section style={{ 
-        padding: "160px 0 80px", 
-        background: "linear-gradient(rgba(11, 22, 44, 0.9), rgba(11, 22, 44, 0.9)), url('/assets/astrology_slide_1.png')",
-        backgroundSize: "cover",
-        color: "white",
-        textAlign: "center"
-      }}>
+      {/* Page Header */}
+      <section className={styles.pageHeader}>
         <div className="container">
-          <h1 style={{ fontFamily: "var(--font-cinzel), serif", fontSize: "3.5rem", marginBottom: "1rem" }}>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className={styles.pageTitle}
+          >
             {t("services.page_header")}
-          </h1>
-          <p style={{ fontSize: "1.2rem", maxWidth: "700px", margin: "0 auto", opacity: 0.8 }}>
-            {t("services.page_description")}
-          </p>
+          </motion.h1>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 1 }}
+            className={styles.breadcrumb}
+          >
+            {t("nav.home")} / {t("nav.services")}
+          </motion.div>
         </div>
       </section>
 
