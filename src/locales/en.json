@@ -109,9 +109,19 @@
     "zodiac": "Select Your Zodiac"
   },
   "gallery": {
-    "title": "Our Sacred Gallery",
-    "description": "Capturing moments of spiritual guidance, Vedic rituals, and divine connections.",
-    "updating": "Our gallery is being updated with sacred moments and spiritual events. Please visit soon!"
+    "title": "Sacred Moments",
+    "page_header": "Our Spiritual Journey",
+    "page_description": "A visual journey through sacred rituals, Vedic poojas, and divine ceremonies.",
+    "photo_1": "Ganesh Pooja Setup",
+    "photo_2": "Swastik Ritual",
+    "photo_3": "Navgraha Shanti",
+    "photo_4": "Vedic Ceremony",
+    "photo_5": "Pooja Preparation",
+    "photo_6": "Sacred Kalash Mandala",
+    "photo_7": "Multi-Pooja Ritual",
+    "photo_8": "Deepak Selection",
+    "photo_9": "Brahman Devotion",
+    "photo_10": "Sacred Entry Ceremony"
   },
   "testimonials": {
     "title": "Transformative Experiences",
