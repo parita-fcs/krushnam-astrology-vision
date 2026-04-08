@@ -79,11 +79,11 @@
   transition: width 0.3s;
 }
 
-.menuItem:hover {
+.menuItem:hover, .menuItem.active {
   color: var(--primary);
 }
 
-.menuItem:hover::after {
+.menuItem:hover::after, .menuItem.active::after {
   width: 100%;
 }
 

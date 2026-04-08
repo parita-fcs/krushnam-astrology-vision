@@ -8,8 +8,11 @@ import styles from "./Navbar.module.css";
 import { MessageSquare, Sparkles, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { usePathname } from "next/navigation";
+
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -20,6 +23,12 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isActive = (path: string) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname?.startsWith(path)) return true;
+    return false;
+  };
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
@@ -51,11 +60,51 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-          <li><Link href="/" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.home")}</Link></li>
-          <li><Link href="/about" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.about")}</Link></li>
-          <li><Link href="/services" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.services")}</Link></li>
-          <li><Link href="/gallery" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.gallery")}</Link></li>
-          <li><Link href="/contact" className={styles.menuItem} onClick={() => setIsMenuOpen(false)}>{t("nav.contact")}</Link></li>
+          <li>
+            <Link 
+              href="/" 
+              className={`${styles.menuItem} ${isActive("/") ? styles.active : ""}`} 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t("nav.home")}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/about" 
+              className={`${styles.menuItem} ${isActive("/about") ? styles.active : ""}`} 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t("nav.about")}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/services" 
+              className={`${styles.menuItem} ${isActive("/services") ? styles.active : ""}`} 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t("nav.services")}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/gallery" 
+              className={`${styles.menuItem} ${isActive("/gallery") ? styles.active : ""}`} 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t("nav.gallery")}
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/contact" 
+              className={`${styles.menuItem} ${isActive("/contact") ? styles.active : ""}`} 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t("nav.contact")}
+            </Link>
+          </li>
         </ul>
 
         <div className={styles.actions}>
