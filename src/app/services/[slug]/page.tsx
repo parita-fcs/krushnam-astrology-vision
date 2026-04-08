@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2, Phone, Calendar } from "lucide-react";
 import Link from "next/link";
 
+import styles from "@/components/layout/PageHeader.module.css";
+
 export default function ServiceDetail() {
   const { slug } = useParams();
   const { t } = useLanguage();
@@ -22,8 +24,6 @@ export default function ServiceDetail() {
     .replace(/-+/g, '_');
 
   // We need to fetch the service data from translations
-  // Next step is usually to check if the key exists.
-  // In our setup, t() returns the key itself if not found.
   const title = t(`service_detail.${normalizedSlug}.title`);
   
   if (title === `service_detail.${normalizedSlug}.title`) {
@@ -42,9 +42,6 @@ export default function ServiceDetail() {
   }
 
   // Extract arrays (benefits and process)
-  // Note: Most i18n setups handle arrays. If t() doesn't return an array directly, 
-  // you might need to map keys like benefits.0, benefits.1 etc. 
-  // But our LanguageContext usually handles simple objects if we access them.
   const service = {
     title: t(`service_detail.${normalizedSlug}.title`),
     subtitle: t(`service_detail.${normalizedSlug}.subtitle`),
@@ -57,36 +54,39 @@ export default function ServiceDetail() {
     <main style={{ minHeight: "100vh", backgroundColor: "#fdfcf9" }}>
       <Navbar />
       
-      {/* Hero Section */}
-      <section style={{ 
-        padding: "160px 0 100px", 
-        background: "linear-gradient(rgba(11, 22, 44, 0.85), rgba(11, 22, 44, 0.85)), url('/assets/astrology_slide_1.png')",
-        backgroundSize: "cover",
-        color: "white",
-        textAlign: "center"
-      }}>
+      {/* Page Header */}
+      <section className={styles.pageHeader}>
         <div className="container">
           <Link href="/services" style={{ 
             display: "inline-flex", 
             alignItems: "center", 
             gap: "0.5rem", 
             color: "var(--primary)", 
-            marginBottom: "2rem",
+            marginBottom: "1.5rem",
             textDecoration: "none",
-            fontWeight: 600
+            fontWeight: 600,
+            textTransform: "uppercase",
+            fontSize: "0.8rem",
+            letterSpacing: "1px"
           }}>
-            <ArrowLeft size={18} /> {t("service_detail.back")}
+            <ArrowLeft size={16} /> {t("service_detail.back")}
           </Link>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            style={{ fontFamily: "var(--font-cinzel), serif", fontSize: "3.5rem", marginBottom: "1rem" }}
+            className={styles.pageTitle}
+            style={{ marginBottom: "0.5rem" }}
           >
             {service.title}
           </motion.h1>
-          <p style={{ fontSize: "1.3rem", fontWeight: 300, color: "var(--primary)", letterSpacing: "2px" }}>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            style={{ color: "var(--primary)", opacity: 0.8, letterSpacing: "2px", textTransform: "uppercase", fontSize: "0.9rem", fontWeight: 700 }}
+          >
             {service.subtitle}
-          </p>
+          </motion.p>
         </div>
       </section>
 

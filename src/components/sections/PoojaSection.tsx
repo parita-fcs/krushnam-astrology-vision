@@ -1,84 +1,77 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 import styles from "./PoojaSection.module.css";
-import { Sparkles } from "lucide-react";
+import { 
+  ShieldCheck, 
+  Sparkle, 
+  Orbit, 
+  Activity, 
+  Bird, 
+  Zap,
+  ArrowRight
+} from "lucide-react";
+import Link from "next/link";
 
-const remedies = [
-  {
-    image: "/assets/pooja.png",
-    title: "Vedic Pooja",
-    desc: "Traditional rituals performed with precise Vedic mantras for divine harmony and positive vibrations."
-  },
-  {
-    image: "/assets/havan.png",
-    title: "Sacred Havan",
-    desc: "Purifying fire ceremonies to clear negative energy and bring prosperity to your home and life."
-  },
-  {
-    image: "/assets/gemstones.png",
-    title: "Blessed Gemstones",
-    desc: "Authentic stones prescribed according to your birth chart to balance planetary influences."
-  },
-  {
-    image: "/assets/mantra.png",
-    title: "Mantra Jaap",
-    desc: "Tailored sacred chanting sessions designed to realign your inner energy with cosmic frequencies."
-  }
+const poojaItems = [
+  { key: "mahamrityunjay", icon: <ShieldCheck size={32} />, color: "#C5A059" },
+  { key: "navgraha", icon: <Orbit size={32} />, color: "#B100FF" },
+  { key: "rudra", icon: <Sparkle size={32} />, color: "#4D96FF" },
+  { key: "kaal_sarp", icon: <Activity size={32} />, color: "#FF6B6B" },
+  { key: "shanti_path", icon: <Bird size={32} />, color: "#6BCB77" },
+  { key: "sunderkand", icon: <Zap size={32} />, color: "#FFD93D" }
 ];
 
 export default function PoojaSection() {
+  const { t } = useLanguage();
+
   return (
-    <section className={styles.pooja} id="pooja">
+    <section className={styles.section} id="poojas">
       <div className={`${styles.container} container`}>
-        <motion.div 
-          className={styles.header}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className={styles.topLabel}>
-            <Sparkles size={14} style={{ marginRight: '8px' }} />
-            Sacred Remedies
-          </span>
-          <h2 className={styles.title}>Spiritual Healing & <br /> Divine Rituals</h2>
-          <p className={styles.subtitle}>
-            Bringing peace, balance, and prosperity through ancient Vedic rituals 
-            and time-tested spiritual remedies.
-          </p>
-        </motion.div>
-        
+        <div className={styles.header}>
+          <span className={styles.subtitle}>{t("poojas.subtitle")}</span>
+          <h2 className={styles.title}>{t("poojas.title")}</h2>
+        </div>
+
         <div className={styles.grid}>
-          {remedies.map((item, index) => (
+          {poojaItems.map((item, index) => (
             <motion.div 
-              key={index}
+              key={item.key}
               className={styles.card}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ delay: index * 0.1 }}
             >
-              <div className={styles.imageBox}>
-                <Image 
-                  src={item.image}
-                  alt={item.title}
-                  width={400}
-                  height={300}
-                  className={styles.cardImage}
-                />
+              <div className={styles.iconWrapper} style={{ backgroundColor: `${item.color}15`, color: item.color }}>
+                {item.icon}
               </div>
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{item.title}</h3>
-                <p className={styles.cardDesc}>{item.desc}</p>
+              <div className={styles.content}>
+                <h3 className={styles.cardTitle}>{t(`poojas.items.${item.key}.title`)}</h3>
+                <p className={styles.cardDesc}>{t(`poojas.items.${item.key}.desc`)}</p>
+                <Link href="/contact" className={styles.cardLink}>
+                  {t("common.learn_more")} <ArrowRight size={14} />
+                </Link>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className={styles.footer}>
+          <Link href="/services">
+            <motion.button 
+              className="btn btn-primary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{ marginTop: "4rem" }}
+            >
+              {t("poojas.view_all")} <ArrowRight size={18} />
+            </motion.button>
+          </Link>
         </div>
       </div>
     </section>
   );
 }
-

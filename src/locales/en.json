@@ -1,6 +1,7 @@
 {
   "common": {
-    "learn_more": "Learn More"
+    "learn_more": "Learn More",
+    "view_all": "View All"
   },
   "nav": {
     "home": "Home",
@@ -126,6 +127,37 @@
     "message": "How can we help you?",
     "submit": "Send Message",
     "whatsapp": "Chat on WhatsApp"
+  },
+  "poojas": {
+    "title": "Divine Vedic Rituals",
+    "subtitle": "Invocation of Sacred Energies through Ancient Traditions",
+    "view_all": "View All Rituals",
+    "items": {
+      "mahamrityunjay": {
+        "title": "Mahamrityunjaya Jap",
+        "desc": "A life-giving invocation for profound healing, spiritual protection, and longevity through sacred vibrations."
+      },
+      "navgraha": {
+        "title": "Navagraha Shanti",
+        "desc": "A harmonious ritual to balance the cosmic energies of the nine planets and invite auspiciousness."
+      },
+      "rudra": {
+        "title": "Rudra Abhishek",
+        "desc": "A transcendental offering to Lord Shiva to clear spiritual paths, ensuring inner peace and abundance."
+      },
+      "kaal_sarp": {
+        "title": "Kaal Sarp Dosh Nivaran",
+        "desc": "Specific ritual to remove karmic obstacles and ensure a smooth path forward in life."
+      },
+      "shanti_path": {
+        "title": "Shanti Path",
+        "desc": "Universal Vedic chanting for absolute peace, prosperity, and cosmic harmony in your space."
+      },
+       "sunderkand": {
+        "title": "Sunderkand Path",
+        "desc": "Glorification of Lord Hanuman's divine deeds for courage, protection from negativity, and success."
+      }
+    }
   },
   "service_detail": {
     "back": "Back to Services",

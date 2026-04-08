@@ -40,7 +40,7 @@ export default function Navbar() {
         <ul className={`${styles.menu} ${isMenuOpen ? styles.menuOpen : ""}`}>
           <div className={styles.mobileActions}>
             <div className={styles.langToggleMobile}>
-              {["en", "hi"].map((lang) => (
+              {["en", "hi", "gu"].map((lang) => (
                 <button
                   key={lang}
                   className={`${styles.langBtn} ${language === lang ? styles.langBtnActive : ""}`}
@@ -60,7 +60,7 @@ export default function Navbar() {
 
         <div className={styles.actions}>
           <div className={styles.langToggle}>
-            {["en", "hi"].map((lang) => (
+            {["en", "hi", "gu"].map((lang) => (
               <button
                 key={lang}
                 className={`${styles.langBtn} ${language === lang ? styles.langBtnActive : ""}`}
