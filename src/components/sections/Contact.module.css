@@ -1,107 +1,331 @@
 .contact {
-  padding: 8rem 0;
-  background-color: var(--bg-cream);
+  padding: 10rem 0;
+  background-color: var(--bg-light);
+  background-image: radial-gradient(circle at 10% 10%, rgba(197, 160, 89, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 90%, rgba(197, 160, 89, 0.05) 0%, transparent 40%);
   position: relative;
   overflow: hidden;
 }
 
-.title {
-  font-size: 3.5rem;
-  color: var(--primary);
-  margin-bottom: 2rem;
-}
-
-.subtitle {
-  font-size: 1.15rem;
-  color: var(--text-muted);
-  margin-bottom: 4rem;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 6rem;
+  align-items: start;
+}
+
+.topLabel {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-family: var(--font-cinzel), serif;
+  color: var(--secondary);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 3.5rem;
+  max-width: 500px;
+}
+
+.infoSideVertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.iconBox {
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: var(--primary);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  flex-shrink: 0;
+}
+
+.textDetails label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.textDetails p {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.ctaBox {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  border-left: 5px solid #25D366;
+  box-shadow: var(--shadow-soft);
+}
+
+.ctaTitle {
+  font-family: var(--font-cinzel), serif;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.ctaDesc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.whatsappBtnInBox {
+  background-color: #25D366;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  width: fit-content;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
 }
 
 .formCard {
   background: white;
   padding: 4rem;
   border-radius: 30px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(11, 22, 35, 0.05);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.infoCol {
+.formHeading {
+  font-size: 2rem;
+  font-family: var(--font-cinzel), serif;
+  color: var(--secondary);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.contactMethod {
-  display: flex;
-  align-items: flex-start;
   gap: 1.5rem;
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 20px;
-  transition: all 0.3s;
-  border: 1px solid rgba(11, 22, 35, 0.05);
 }
 
-.contactMethod:hover {
-  transform: translateX(10px);
-  border-color: var(--secondary);
+.formGroup label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
 }
 
-.icon {
-  width: 50px;
-  height: 50px;
-  background: var(--bg-light);
-  color: var(--primary);
+.formGroup input, .formGroup textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: #fdfcf9;
+  border: 1.5px solid #eee;
   border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.formGroup input:focus, .formGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.submitBtn {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 1rem;
+  box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
 }
 
-.contactDetail h4 {
-  font-size: 1.1rem;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-}
-
-.contactDetail p {
-  color: var(--text-muted);
-}
-
-/* WhatsApp Floating Button */
-.whatsappBtn {
+/* Floating WhatsApp */
+.floatingWhatsapp {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  width: 65px;
-  height: 65px;
+  width: 70px;
+  height: 70px;
   background-color: #25D366;
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
   z-index: 1000;
-  cursor: pointer;
-  transition: all 0.3s;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  transition: all 0.4s var(--transition-smooth);
 }
 
-.whatsappBtn:hover {
-  transform: scale(1.1) translateY(-5px);
-  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+.floatingWhatsapp:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.whatsappTooltip {
+  position: absolute;
+  right: 85px;
+  background: white;
+  color: var(--secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.floatingWhatsapp:hover .whatsappTooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.stackedView {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.infoCardFull {
+  background: white;
+  padding: 3rem;
+  border-radius: 25px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.infoGridRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.whatsappFullRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fdfcf9;
+  padding: 2rem;
+  border-radius: 18px;
+  border-left: 5px solid #25D366;
+  gap: 2rem;
+}
+
+.whatsappText {
+  flex: 1;
+}
+
+.formCardFull {
+  background: white;
+  padding: 4rem;
+  border-radius: 25px;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.formRowThree {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.mapWrapperFull {
+  width: 100%;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(0,0,0,0.03);
 }
 
 @media (max-width: 992px) {
-  .grid {
+  .whatsappFullRow {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .infoCardFull, .formCardFull {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formRow {
     grid-template-columns: 1fr;
-    gap: 4rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
   }
 }

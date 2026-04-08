@@ -13,17 +13,20 @@ export default function Contact() {
   return (
     <section className={styles.contact} id="contact">
       <div className={`${styles.container} container`}>
+        <div className={styles.header}>
+            <span className={styles.topLabel}>{t("contact.top_label")}</span>
+            <h2 className={styles.title}>{t("contact.title")}</h2>
+            <p className={styles.subtitle}>{t("contact.subtitle")}</p>
+        </div>
+
         <div className={styles.grid}>
+          {/* Info Side - 6/6 */}
           <motion.div 
-            className={styles.infoSide}
+            className={styles.infoSideVertical}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className={styles.topLabel}>Contact Us</span>
-            <h2 className={styles.title}>{t("contact.title")}</h2>
-            <p className={styles.subtitle}>{t("contact.subtitle")}</p>
-            
             <div className={styles.infoList}>
               <div className={styles.infoItem}>
                 <div className={styles.iconBox}><Phone size={24} /></div>
@@ -45,23 +48,28 @@ export default function Contact() {
                 <div className={styles.iconBox}><MapPin size={24} /></div>
                 <div className={styles.textDetails}>
                   <label>{t("contact.pob")}</label>
-                  <p>Gadhada (Swamina), Dist. Botad, Gujarat</p>
+                  <p>Gadhada (Swamina), Dist. Botad, Gujarat (India)</p>
                 </div>
               </div>
             </div>
 
             <div className={styles.ctaBox}>
-               <h4>Prefer Instant Chat?</h4>
-               <p>Connect immediately on WhatsApp for quick queries.</p>
-               <Link href="https://wa.me/918160874164" target="_blank">
-                 <button className={styles.whatsappBtn}>
+               <h4 className={styles.ctaTitle}>{t("contact.whatsapp_title")}</h4>
+               <p className={styles.ctaDesc}>{t("contact.whatsapp_desc")}</p>
+               <Link href="https://wa.me/918160874164" target="_blank" className={styles.whatsappLink}>
+                 <motion.button 
+                   className={styles.whatsappBtnInBox}
+                   whileHover={{ scale: 1.02 }}
+                   whileTap={{ scale: 0.98 }}
+                 >
                     <MessageCircle size={20} />
                     {t("contact.whatsapp")}
-                 </button>
+                 </motion.button>
                </Link>
             </div>
           </motion.div>
           
+          {/* Form Side - 6/6 */}
           <motion.div 
             className={styles.formSide}
             initial={{ opacity: 0, x: 30 }}
@@ -69,33 +77,32 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <div className={styles.formCard}>
-               <h3 className={styles.formHeading}>Book Your Consultation</h3>
-               <form className={styles.form}>
+               <h3 className={styles.formHeading}>{t("contact.form_heading")}</h3>
+               <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
                   <div className={styles.formGroup}>
                     <label>{t("contact.name")}</label>
-                    <input type="text" placeholder="Your Full Name" required />
+                    <input type="text" placeholder={t("contact.name_placeholder")} required />
                   </div>
                   
                   <div className={styles.formRow}>
                     <div className={styles.formGroup}>
-                      <label>Phone Number</label>
+                      <label>{t("contact.phone_label")}</label>
                       <input type="tel" placeholder="+91 00000 00000" required />
                     </div>
                     <div className={styles.formGroup}>
-                      <label>Select Date</label>
+                      <label>{t("contact.date_label")}</label>
                       <input type="date" required />
                     </div>
                   </div>
 
                   <div className={styles.formGroup}>
                     <label>{t("contact.message")}</label>
-                    <textarea rows={4} placeholder="Tell us briefly about your concerns..." required></textarea>
+                    <textarea rows={4} placeholder={t("contact.msg_placeholder")} required></textarea>
                   </div>
                   
                   <motion.button 
                     type="submit" 
-                    className="btn btn-primary" 
-                    style={{ width: "100%" }}
+                    className={styles.submitBtn} 
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -106,13 +113,26 @@ export default function Contact() {
             </div>
           </motion.div>
         </div>
-      </div>
 
-      {/* Floating WhatsApp Button */}
-      <Link href="https://wa.me/918160874164" target="_blank" className={styles.floatingWhatsapp}>
-          <MessageCircle size={32} />
-          <span className={styles.tooltip}>Chat with us!</span>
-      </Link>
+        {/* Map Integration - 12/12 */}
+        <motion.div 
+          className={styles.mapWrapperFull}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{ marginTop: "4rem" }}
+        >
+           <iframe 
+              src="https://maps.google.com/maps?q=21.9761995,71.573847&z=17&output=embed" 
+              width="100%" 
+              height="450" 
+              style={{ border: 0, borderRadius: "25px" }} 
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+           ></iframe>
+        </motion.div>
+      </div>
     </section>
   );
 }
