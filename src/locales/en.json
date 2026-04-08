@@ -69,8 +69,13 @@
     "philosophy_desc": "Our process involves more than just reading birth charts. We dive deep into your unique karmic journey, aligning ancient celestial wisdom with your current aspirations. Every soul has a unique cosmic design, and our role is to help you understand and harmonize with it for a fulfilling life."
   },
   "services": {
-    "title": "Divine Guidance Services",
-    "subtitle": "Tailored astrological solutions for your spiritual and material well-being",
+    "section_label": "Sacred Services",
+    "title_home": "Spiritual Solutions For Your Life Journey",
+    "title_page": "Explore All Our Spiritual Services",
+    "subtitle": "Explore our range of personalized astrology services rooted in ancient Vedic traditions and modern insights.",
+    "view_all": "View All Sacred Services",
+    "page_header": "Our Sacred Services",
+    "page_description": "Comprehensive Vedic solutions for health, wealth, relationships, and spiritual growth.",
     "items": {
       "kundli": "Kundli Analysis",
       "marriage": "Marriage Matching",

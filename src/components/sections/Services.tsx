@@ -79,25 +79,26 @@ const services = [
 export default function Services({ isPage = false }: { isPage?: boolean }) {
   const { t } = useLanguage();
 
+  const displayedServices = isPage ? services : services.slice(0, 6);
+
   return (
     <section className={styles.services} id="services">
       <div className={`${styles.container} container`}>
         <div className={styles.header}>
           <div className={styles.topLabel}>
             <Star size={16} />
-            <span>Sacred Services</span>
+            <span>{t("services.section_label") || "Sacred Services"}</span>
           </div>
           <h2 className={styles.title}>
-            {isPage ? "Explore All Our Spiritual Services" : "Spiritual Solutions For Your Life Journey"}
+            {isPage ? t("services.title_page") : t("services.title_home")}
           </h2>
           <p className={styles.subtitle}>
-            Explore our range of personalized astrology services rooted in ancient 
-            Vedic traditions and modern insights.
+            {t("services.subtitle")}
           </p>
         </div>
         
         <div className={styles.grid}>
-          {services.map((service, index) => {
+          {displayedServices.map((service, index) => {
             const serviceKey = service.title.trim().toLowerCase().replace(/&/g, '').replace(/\s+/g, '_').replace(/-+/g, '_');
             const localizedTitle = t(`service_detail.${serviceKey}.title`);
             const localizedDesc = t(`service_detail.${serviceKey}.description`);
@@ -137,7 +138,7 @@ export default function Services({ isPage = false }: { isPage?: boolean }) {
         {!isPage && (
           <div className={styles.viewAllWrapper}>
             <Link href="/services" className={styles.viewAllBtn}>
-              View All Sacred Services
+              {t("services.view_all") || "View All Sacred Services"}
             </Link>
           </div>
         )}
