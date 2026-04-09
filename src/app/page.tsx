@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
+import QuoteBanner from "@/components/sections/QuoteBanner";
 import PoojaSection from "@/components/sections/PoojaSection";
 import GalleryPreview from "@/components/sections/GalleryPreview";
 import Testimonials from "@/components/sections/Testimonials";
@@ -14,8 +15,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <QuoteBanner />
       <Services />
-      <PoojaSection />
+      <PoojaSection limit={6} />
       <GalleryPreview />
       <Testimonials />
       <Contact />

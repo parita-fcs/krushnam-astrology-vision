@@ -88,10 +88,16 @@
   margin-bottom: 0.2rem;
 }
 
-.textDetails p {
+.textDetails p, .contactLink {
   font-size: 1.1rem;
   color: var(--secondary);
   font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contactLink:hover {
+  color: var(--primary);
 }
 
 .ctaBox {

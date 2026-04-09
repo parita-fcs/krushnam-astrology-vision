@@ -40,7 +40,9 @@ export default function Contact() {
                 <div className={styles.iconBox}><Mail size={24} /></div>
                 <div className={styles.textDetails}>
                   <label>{t("contact.email")}</label>
-                  <p>amitshastri@gmail.com</p>
+                  <a href="mailto:amit.trivedi0981@gmail.com" className={styles.contactLink}>
+                    amit.trivedi0981@gmail.com
+                  </a>
                 </div>
               </div>
               

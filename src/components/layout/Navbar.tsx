@@ -98,6 +98,15 @@ export default function Navbar() {
           </li>
           <li>
             <Link 
+              href="/poojas" 
+              className={`${styles.menuItem} ${isActive("/poojas") ? styles.active : ""}`} 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t("nav.poojas")}
+            </Link>
+          </li>
+          <li>
+            <Link 
               href="/contact" 
               className={`${styles.menuItem} ${isActive("/contact") ? styles.active : ""}`} 
               onClick={() => setIsMenuOpen(false)}

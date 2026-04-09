@@ -9,6 +9,26 @@
   color: white;
 }
 
+.light {
+  background: var(--bg-light) !important;
+  color: var(--secondary);
+}
+
+.lightText {
+  color: var(--secondary) !important;
+  text-shadow: none !important;
+}
+
+.lightCard {
+  background: white !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.lightDesc {
+  color: var(--text-muted) !important;
+}
+
 .section::before {
   content: '';
   position: absolute;
@@ -87,6 +107,11 @@
   transition: all 0.4s;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightCard .iconWrapper {
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  background-color: #fff !important;
 }
 
 .card:hover .iconWrapper {

@@ -1,13 +1,19 @@
 {
   "common": {
     "learn_more": "Learn More",
-    "view_all": "View All"
+    "view_all": "View All",
+    "view_services": "View All Services"
+  },
+  "cta": {
+    "gita_quote": "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+    "gita_reference": "— Bhagavad Gita 2.47"
   },
   "nav": {
     "home": "Home",
     "about": "About",
     "services": "Services",
     "gallery": "Gallery",
+    "poojas": "Rituals",
     "contact": "Contact",
     "book_now": "Book Now"
   },
@@ -152,6 +158,8 @@
     "title": "Divine Vedic Rituals",
     "subtitle": "Invocation of Sacred Energies through Ancient Traditions",
     "view_all": "View All Rituals",
+    "page_header": "Sacred Vedic Rituals",
+    "page_description": "Experience the divine power of ancient Vedic ceremonies, anushthans, and poojas performed with authentic scriptural precision.",
     "items": {
       "mahamrityunjay": {
         "title": "Mahamrityunjaya Jap",
@@ -176,6 +184,46 @@
        "sunderkand": {
         "title": "Sunderkand Path",
         "desc": "Glorification of Lord Hanuman's divine deeds for courage, protection from negativity, and success."
+      },
+      "mandir_pratishtha": {
+        "title": "Mandir Pran Pratishtha",
+        "desc": "Sacred ritual to infuse divine life into temple idols through Vedic mantras."
+      },
+      "narayan_bali": {
+        "title": "Narayan Bali",
+        "desc": "Special ceremony to provide peace to departed souls and resolve ancestral hurdles."
+      },
+      "pitru_shradhh": {
+        "title": "Pitru Shradhh",
+        "desc": "Traditional rites to honor ancestors and seek their blessings for family prosperity."
+      },
+      "panch_bali": {
+        "title": "Panch Bali",
+        "desc": "Five-fold Vedic offering to various beings for karmic purification and balance."
+      },
+      "dasha_mahavidya": {
+        "title": "Dasha Mahavidya Anushthan",
+        "desc": "Grand spiritual practice dedicated to the ten forms of the Divine Mother."
+      },
+      "shree_yantra": {
+        "title": "Shree Yantra Pooja",
+        "desc": "Sacred ritual for the Sri Yantra to attract wealth, harmony, and spiritual growth."
+      },
+      "santan_prapti": {
+        "title": "Santan Prapti Concept",
+        "desc": "Vedic guidance and specialized rituals for couples seeking the blessing of progeny."
+      },
+      "bagalamukhi": {
+        "title": "Bagalamukhi Anushthan",
+        "desc": "Potent ritual for protection, victory over legal issues, and overcoming enemies."
+      },
+      "vedic_muhurta": {
+        "title": "Vedic Muhurta",
+        "desc": "Calculation of the most auspicious cosmic timings for weddings, business, and events."
+      },
+      "vaidik_vivah": {
+        "title": "Vaidik Vivah",
+        "desc": "Authentic Vedic wedding ceremonies performed with traditional scriptural precision."
       }
     }
   },
