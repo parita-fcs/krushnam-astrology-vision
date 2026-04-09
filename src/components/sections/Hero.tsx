@@ -72,18 +72,20 @@ export default function Hero() {
             <div className={styles.verticalLine} />
             <div className={styles.slokWrap}>
               <h1 className={styles.slokTitleColumn}>
-                कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। <br />
-                <span className={styles.goldenHighlight}>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥</span>
+                {t("cta.gita_shlok_1")} <br />
+                <span className={styles.goldenHighlight}>
+                  {t("cta.gita_shlok_2")}
+                </span>
               </h1>
 
               <p className={styles.slokMeaningColumn}>
-                 "You have a right to perform your prescribed duties, but <br />
-                 you are not entitled to the fruits of your actions." — Gita 2.47
+                 "{t("cta.gita_quote")}" <br />
+                 <span className={styles.reference}>{t("cta.gita_reference")}</span>
               </p>
 
               <div className={styles.ctaWrapper}>
                 <Link href="/services" className={styles.premiumBtnSmall}>
-                  <span>Explore Services</span>
+                  <span>{t("common.explore_services")}</span>
                 </Link>
               </div>
             </div>

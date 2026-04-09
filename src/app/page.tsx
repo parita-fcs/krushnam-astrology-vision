@@ -15,7 +15,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <QuoteBanner />
       <Services />
       <PoojaSection limit={6} />
       <GalleryPreview />

@@ -22,7 +22,10 @@ export default function QuoteBanner() {
         >
           <blockquote className={styles.quote}>
             <span className={styles.quoteMark}>"</span>
-            {t("cta.gita_quote")}
+            {t("cta.gita_shlok_1")} <br />
+            <span className={styles.goldenHighlight}>
+              {t("cta.gita_shlok_2")}
+            </span>
             <span className={styles.quoteMark}>"</span>
           </blockquote>
           <cite className={styles.author}>{t("cta.gita_reference")}</cite>
@@ -34,7 +37,7 @@ export default function QuoteBanner() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {t("common.view_services")} <ArrowRight size={20} />
+                {t("common.explore_services")} <ArrowRight size={20} />
               </motion.button>
             </Link>
           </div>

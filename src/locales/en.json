@@ -2,11 +2,13 @@
   "common": {
     "learn_more": "Learn More",
     "view_all": "View All",
-    "view_services": "View All Services"
+    "explore_services": "Explore Services"
   },
   "cta": {
+    "gita_shlok_1": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।",
+    "gita_shlok_2": "मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥",
     "gita_quote": "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-    "gita_reference": "— Bhagavad Gita 2.47"
+    "gita_reference": "— Gita 2.47"
   },
   "nav": {
     "home": "Home",
