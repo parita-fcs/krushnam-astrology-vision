@@ -151,10 +151,41 @@
     "name_placeholder": "Your Full Name",
     "phone_label": "Mobile Number",
     "date_label": "Preferred Date",
+    "service_label": "Select Service",
+    "pooja_label": "Select Ritual (If Pooja)",
     "message": "Your Message",
     "msg_placeholder": "Tell us briefly about your concerns (e.g. Health, Career, Marriage)...",
-    "submit": "Send Message",
-    "whatsapp": "Chat on WhatsApp"
+    "submit": "Send via WhatsApp",
+    "whatsapp": "Chat on WhatsApp",
+    "services_options": [
+      "Janam Kundli Analysis",
+      "Vedic Pooja & Yagya",
+      "Karmakand Vidhi",
+      "Vastu Consultation",
+      "Marriage Matching",
+      "Business & Career Guidance",
+      "Gemstone Advice",
+      "Tarot Reading",
+      "Numerology"
+    ],
+    "poojas_options": [
+      "Mahamrityunjaya Jap",
+      "Navagraha Shanti",
+      "Rudra Abhishek",
+      "Kaal Sarp Dosh Nivaran",
+      "Shanti Path",
+      "Sunderkand Path",
+      "Mandir Pran Pratishtha",
+      "Narayan Bali",
+      "Pitru Shradhh",
+      "Panch Bali",
+      "Dasha Mahavidya Anushthan",
+      "Shree Yantra Pooja",
+      "Santan Prapti Concept",
+      "Bagalamukhi Anushthan",
+      "Vedic Muhurta",
+      "Vaidik Vivah"
+    ]
   },
   "poojas": {
     "title": "Divine Vedic Rituals",
