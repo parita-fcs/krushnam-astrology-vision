@@ -210,10 +210,10 @@
   
   .langToggle {
     display: flex;
-    padding: 3px;
+    padding: 2px;
     background: rgba(255, 255, 255, 0.15); 
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    margin-right: -0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-right: 0;
     align-items: center;
   }
 
@@ -223,8 +223,8 @@
   }
 
   .langToggle .langBtn {
-    padding: 0.25rem 0.4rem;
-    font-size: 0.6rem;
+    padding: 0.15rem 0.35rem;
+    font-size: 0.55rem;
     color: #fff;
   }
 
@@ -243,17 +243,18 @@
   }
 
   .logoBox {
-    flex: initial;
+    flex: 0 0 auto;
   }
 
   .actions {
     flex: 1;
-    gap: 0.8rem;
+    gap: 0.5rem;
+    justify-content: flex-end;
   }
 
   .logoImage {
-    max-width: 100px;
-    max-height: 50px;
+    max-width: 90px;
+    max-height: 45px;
   }
 
   .menu {
@@ -280,11 +281,11 @@
 
 @media (max-width: 480px) {
   .logoImage {
-    max-width: 110px;
+    max-width: 80px;
   }
   
   .actions {
-    gap: 0.5rem;
+    gap: 0.3rem;
   }
 }
 

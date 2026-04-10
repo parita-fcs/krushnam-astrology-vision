@@ -171,19 +171,27 @@
   
   .grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .card {
-    padding: 2rem;
+    padding: 2.5rem 1.5rem;
+    min-height: auto;
     flex-direction: column;
     text-align: center;
   }
   
   .iconWrapper {
     margin: 0 auto;
+    width: 70px;
+    height: 70px;
   }
   
   .cardLink {
     justify-content: center;
+  }
+
+  .cardTitle {
+    font-size: 1.35rem;
   }
 }
