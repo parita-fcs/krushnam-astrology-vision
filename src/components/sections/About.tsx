@@ -33,7 +33,7 @@ export default function About() {
                 src="/assets/astrologer.png"
                 alt="Professional Astrologer"
                 width={500}
-                height={600}
+                height={800}
                 className={styles.aboutImage}
               />
               <motion.div 
