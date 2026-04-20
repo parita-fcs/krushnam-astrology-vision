@@ -7,6 +7,7 @@ import About from "@/components/sections/About";
 import styles from "./AboutPage.module.css";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { Sparkles, Zap, ShieldCheck, Target } from "lucide-react";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -90,26 +91,61 @@ export default function AboutPage() {
           </div>
           
           <div className={styles.valuesGrid}>
-            <div className={styles.valueCard}>
-              <div className={styles.valueIcon}>🕉️</div>
+            <motion.div 
+              className={styles.valueCard}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <div className={styles.valueIconWrapper}>
+                <div className={styles.valueIcon}><Sparkles size={32} /></div>
+              </div>
               <h3>{t("about.values.v1_title")}</h3>
               <p>{t("about.values.v1_desc")}</p>
-            </div>
-            <div className={styles.valueCard}>
-              <div className={styles.valueIcon}>📜</div>
+            </motion.div>
+
+            <motion.div 
+              className={styles.valueCard}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <div className={styles.valueIconWrapper}>
+                <div className={styles.valueIcon}><Zap size={32} /></div>
+              </div>
               <h3>{t("about.values.v2_title")}</h3>
               <p>{t("about.values.v2_desc")}</p>
-            </div>
-            <div className={styles.valueCard}>
-              <div className={styles.valueIcon}>🤝</div>
+            </motion.div>
+
+            <motion.div 
+              className={styles.valueCard}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className={styles.valueIconWrapper}>
+                <div className={styles.valueIcon}><ShieldCheck size={32} /></div>
+              </div>
               <h3>{t("about.values.v3_title")}</h3>
               <p>{t("about.values.v3_desc")}</p>
-            </div>
-            <div className={styles.valueCard}>
-              <div className={styles.valueIcon}>✨</div>
+            </motion.div>
+
+            <motion.div 
+              className={styles.valueCard}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <div className={styles.valueIconWrapper}>
+                <div className={styles.valueIcon}><Target size={32} /></div>
+              </div>
               <h3>{t("about.values.v4_title")}</h3>
               <p>{t("about.values.v4_desc")}</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

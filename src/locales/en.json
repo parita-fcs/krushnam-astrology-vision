@@ -164,9 +164,7 @@
       "Vastu Consultation",
       "Marriage Matching",
       "Business & Career Guidance",
-      "Gemstone Advice",
-      "Tarot Reading",
-      "Numerology"
+      "Gemstone Advice"
     ],
     "poojas_options": [
       "Mahamrityunjaya Jap",
@@ -317,20 +315,6 @@
       "description": "Scientific and astrological recommendation of precious gemstones to strengthen your auspicious planets and neutralize harmful influences.",
       "benefits": ["Bolster weak planets", "Protect against negativity", "Enhance mental clarity", "Attract desired opportunities"],
       "process": ["Detailed chart review", "Planet strength analysis", "Gemstone selection", "Energizing and wearing guidance"]
-    },
-    "tarot_reading": {
-      "title": "Tarot Reading",
-      "subtitle": "Intuitive Guidance for Life's Questions",
-      "description": "Gain deeper insights into your subconscious and current energy patterns to find clear answers for love, career, and personal choices.",
-      "benefits": ["Clarify complex situations", "Understand current energy", "Decision making support", "Future path visualization"],
-      "process": ["Question framing", "Card selection", "Detailed interpretation", "Actionable advice"]
-    },
-    "numerology": {
-      "title": "Numerology",
-      "subtitle": "The Science of Vibrational Success",
-      "description": "Harness the power of numbers by correcting your name spelling and identifying your lucky dates to resonate with success and harmony.",
-      "benefits": ["Name spelling optimization", "Lucky numbers for business", "Understanding life path number", "Harmonious signature design"],
-      "process": ["Date of birth analysis", "Full name evaluation", "Resonating vibration check", "Name correction recommendation"]
     }
   }
 }

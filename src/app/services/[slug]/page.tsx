@@ -9,7 +9,8 @@ import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2, Phone, Calendar } from "lucide-react";
 import Link from "next/link";
 
-import styles from "@/components/layout/PageHeader.module.css";
+import headerStyles from "@/components/layout/PageHeader.module.css";
+import styles from "./ServiceDetail.module.css";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -55,7 +56,7 @@ export default function ServiceDetail() {
       <Navbar />
       
       {/* Page Header */}
-      <section className={styles.pageHeader}>
+      <section className={headerStyles.pageHeader}>
         <div className="container">
           <Link href="/services" style={{ 
             display: "inline-flex", 
@@ -74,7 +75,7 @@ export default function ServiceDetail() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className={styles.pageTitle}
+            className={headerStyles.pageTitle}
             style={{ marginBottom: "0.5rem" }}
           >
             {service.title}
@@ -91,9 +92,9 @@ export default function ServiceDetail() {
       </section>
 
       {/* Content Section */}
-      <section style={{ padding: "80px 0" }}>
+      <section className={styles.serviceDetail}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 350px", gap: "4rem" }} className="mobile-grid">
+          <div className={styles.grid}>
             
             {/* Left Column */}
             <div>
@@ -106,14 +107,14 @@ export default function ServiceDetail() {
                 </p>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem", marginBottom: "4rem" }} className="mobile-stats">
+              <div className={styles.statsGrid}>
                 <div>
                   <h3 style={{ fontFamily: "var(--font-cinzel), serif", fontSize: "1.4rem", color: "#0b162c", marginBottom: "1.5rem" }}>
                     {t("service_detail.benefits")}
                   </h3>
                   <ul style={{ listStyle: "none", padding: 0 }}>
                     {Array.isArray(service.benefits) && service.benefits.map((benefit, i) => (
-                      <li key={i} style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: "1rem", color: "#555" }}>
+                      <li key={i} className={styles.benefitItem}>
                         <CheckCircle2 size={20} color="#C5A059" /> {benefit}
                       </li>
                     ))}
@@ -125,20 +126,8 @@ export default function ServiceDetail() {
                   </h3>
                   <div style={{ position: "relative" }}>
                     {Array.isArray(service.process) && service.process.map((step, i) => (
-                      <div key={i} style={{ display: "flex", gap: "1.5rem", marginBottom: "1.5rem" }}>
-                        <span style={{ 
-                          width: "30px", 
-                          height: "30px", 
-                          borderRadius: "50%", 
-                          backgroundColor: "#C5A059", 
-                          color: "white", 
-                          display: "flex", 
-                          alignItems: "center", 
-                          justifyContent: "center",
-                          fontSize: "0.8rem",
-                          fontWeight: 700,
-                          flexShrink: 0
-                        }}>
+                      <div key={i} className={styles.processStep}>
+                        <span className={styles.stepNumber}>
                           {i + 1}
                         </span>
                         <p style={{ margin: 0, color: "#555" }}>{step}</p>
@@ -151,15 +140,7 @@ export default function ServiceDetail() {
 
             {/* Sticky Sidebar */}
             <aside>
-              <div style={{ 
-                padding: "2.5rem", 
-                backgroundColor: "#fff", 
-                borderRadius: "20px", 
-                border: "1px solid rgba(197, 160, 89, 0.3)",
-                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.05)",
-                position: "sticky",
-                top: "120px"
-              }}>
+              <div className={styles.sidebar}>
                 <h3 style={{ fontFamily: "var(--font-cinzel), serif", fontSize: "1.4rem", marginBottom: "1.5rem", textAlign: "center" }}>
                   {t("service_detail.book_title")}
                 </h3>
@@ -167,35 +148,11 @@ export default function ServiceDetail() {
                   {t("service_detail.book_subtitle")}
                 </p>
                 
-                <a href="tel:+918160874164" style={{ 
-                  display: "flex", 
-                  alignItems: "center", 
-                  justifyContent: "center", 
-                  gap: "1rem",
-                  padding: "1rem", 
-                  backgroundColor: "#0b162c", 
-                  color: "#fff", 
-                  borderRadius: "12px", 
-                  textDecoration: "none",
-                  fontWeight: 600,
-                  marginBottom: "1rem"
-                }}>
+                <a href="tel:+918160874164" className={styles.bookButtonPrimary}>
                   <Phone size={20} color="#C5A059" /> {t("service_detail.call_now")}
                 </a>
 
-                <Link href="/contact" style={{ 
-                  display: "flex", 
-                  alignItems: "center", 
-                  justifyContent: "center", 
-                  gap: "1rem",
-                  padding: "1rem", 
-                  backgroundColor: "transparent", 
-                  color: "#0b162c", 
-                  borderRadius: "12px", 
-                  border: "2px solid #C5A059",
-                  textDecoration: "none",
-                  fontWeight: 600
-                }}>
+                <Link href="/contact" className={styles.bookButtonSecondary}>
                   <Calendar size={20} /> {t("service_detail.schedule")}
                 </Link>
 

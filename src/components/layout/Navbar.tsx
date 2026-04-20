@@ -59,7 +59,13 @@ export default function Navbar() {
                 </button>
               ))}
             </div>
+            
+            <Link href="#contact" className={styles.bookBtnMobile} onClick={() => setIsMenuOpen(false)}>
+               <Sparkles size={16} />
+               <span>{t("nav.book_now")}</span>
+            </Link>
           </div>
+
           <li>
             <Link 
               href="/" 
@@ -130,7 +136,7 @@ export default function Navbar() {
           </div>
           
           <div className={styles.ctaGroup}>
-            <Link href="#contact">
+            <Link href="#contact" className={styles.desktopOnly}>
                <motion.button 
                  whileHover={{ scale: 1.05 }}
                  className={styles.bookBtn}

@@ -4,57 +4,102 @@
 }
 
 .pageHeader {
-  padding: 10rem 0 5rem;
-  background: linear-gradient(135deg, var(--secondary) 0%, #080D1A 100%);
+  padding: 12rem 0 8rem;
+  background: linear-gradient(135deg, #0B162C 0%, #080D1A 100%);
   text-align: center;
   color: #fff;
-  clip-path: ellipse(110% 80% at 50% 20%);
+  position: relative;
+  overflow: hidden;
+  clip-path: ellipse(150% 100% at 50% 0%);
+}
+
+.pageHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c5a059' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
 }
 
 .pageTitle {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-family: var(--font-cinzel), serif;
   color: var(--primary);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .breadcrumb {
   font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  opacity: 0.7;
+  letter-spacing: 4px;
+  color: var(--primary);
+  opacity: 0.8;
+  font-weight: 600;
 }
 
 /* Section Headers */
 .sectionHeader {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
 .sectionTitle {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-family: var(--font-cinzel), serif;
   color: var(--secondary);
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary-gradient);
+  border-radius: 10px;
 }
 
 .subtitle {
   color: var(--primary);
   text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 700;
-  font-size: 0.8rem;
+  letter-spacing: 5px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: block;
 }
 
 /* Timeline */
 .timelineSection {
-  padding: 8rem 0;
+  padding: 10rem 0;
   background-color: #fff;
   position: relative;
+  overflow: hidden;
+}
+
+.timelineSection::before {
+  content: 'OM';
+  position: absolute;
+  right: -5%;
+  top: 10%;
+  font-size: 30rem;
+  font-family: var(--font-cinzel);
+  opacity: 0.02;
+  color: var(--secondary);
+  pointer-events: none;
 }
 
 .timeline {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   position: relative;
   padding: 2rem 0;
@@ -67,166 +112,267 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, transparent, var(--primary) 10%, var(--primary) 90%, transparent);
+  background: linear-gradient(to bottom, 
+    transparent, 
+    var(--primary) 15%, 
+    var(--primary) 85%, 
+    transparent
+  );
   transform: translateX(-50%);
 }
 
 .timelineItem {
   display: flex;
   justify-content: flex-end;
-  padding-right: 50%;
+  padding-right: 80px;
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
+  width: 50%;
 }
 
 .timelineItem:nth-child(even) {
+  align-self: flex-end;
   justify-content: flex-start;
   padding-right: 0;
-  padding-left: 50%;
+  padding-left: 80px;
+  margin-left: 50%;
 }
 
 .timeYear {
   position: absolute;
-  left: 50%;
+  right: -30px;
   top: 0;
-  transform: translateX(-50%);
-  background: var(--primary);
-  color: white;
-  width: 60px;
-  height: 60px;
+  background: var(--primary-gradient);
+  color: var(--secondary);
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
   z-index: 2;
-  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
-  border: 4px solid #fff;
+  box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
+  border: 5px solid #fff;
+  font-size: 0.9rem;
+}
+
+.timelineItem:nth-child(even) .timeYear {
+  right: auto;
+  left: -30px;
 }
 
 .timeContent {
-  width: 80%;
-  background: var(--bg-light);
-  padding: 2rem;
-  border-radius: var(--radius-md);
-  margin-right: 40px;
-  box-shadow: var(--shadow-soft);
-  border-bottom: 3px solid var(--primary);
+  background: white;
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid var(--primary);
+  transition: all 0.4s var(--transition-smooth);
 }
 
 .timelineItem:nth-child(even) .timeContent {
-  margin-right: 0;
-  margin-left: 40px;
+  border-left: none;
+  border-right: 5px solid var(--primary);
+}
+
+.timeContent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
 }
 
 .timeContent h3 {
   color: var(--secondary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-cinzel), serif;
+  font-size: 1.5rem;
 }
 
 .timeContent p {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 /* Values */
 .valuesSection {
-  padding: 8rem 0;
-  background-color: var(--bg-cream);
+  padding: 10rem 0;
+  background-color: #FAF7F0;
+  position: relative;
 }
 
 .valuesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
 }
 
 .valueCard {
   background: white;
-  padding: 3rem 2rem;
-  border-radius: var(--radius-lg);
+  padding: 4rem 2.5rem;
+  border-radius: 32px;
   text-align: center;
-  transition: all 0.3s;
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.5s var(--transition-smooth);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .valueCard:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(-15px);
+  box-shadow: 0 30px 70px rgba(197, 160, 89, 0.15);
+  border-color: var(--primary);
 }
 
-.valueIcon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+.valueIconWrapper {
+  width: 90px;
+  height: 90px;
+  background: rgba(197, 160, 89, 0.08);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  transition: all 0.5s;
+  color: var(--primary);
+}
+
+.valueCard:hover .valueIconWrapper {
+  background: var(--primary-gradient);
+  color: var(--secondary);
+  transform: rotate(15deg);
 }
 
 .valueCard h3 {
   font-family: var(--font-cinzel), serif;
   color: var(--secondary);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
 }
 
 .valueCard p {
   color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 /* Philosophy */
 .philosophySection {
-  padding: 10rem 0;
-  background: linear-gradient(rgba(11, 22, 44, 0.95), rgba(11, 22, 44, 0.95)), url('/assets/astrology_slide_3.png');
+  padding: 12rem 0;
+  background: linear-gradient(rgba(11, 24, 44, 0.92), rgba(11, 24, 44, 0.92)), url('/assets/astrology_slide_3.png');
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   color: white;
   text-align: center;
+  position: relative;
+}
+
+.philosophySection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
 }
 
 .philosophyContent {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .philosophyContent .sectionTitle {
   color: var(--primary);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .philosophyContent p {
-  font-size: 1.2rem;
-  line-height: 2;
-  opacity: 0.9;
-  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 2.2;
+  opacity: 0.95;
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 300;
 }
 
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 1100px) {
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
   .timeline::before {
-    left: 30px;
+    left: 40px;
+    transform: none;
   }
   
   .timelineItem {
+    width: 100%;
     justify-content: flex-start;
     padding-left: 80px;
     padding-right: 0;
   }
   
   .timelineItem:nth-child(even) {
+    margin-left: 0;
     padding-left: 80px;
   }
   
   .timeYear {
-    left: 30px;
+    left: 8px;
+    right: auto;
   }
   
+  .timelineItem:nth-child(even) .timeYear {
+    left: 8px;
+  }
+
   .timeContent {
-    width: 100%;
-    margin-left: 0 !important;
+    border-left: 4px solid var(--primary);
+    border-right: none !important;
   }
 }
 
 @media (max-width: 768px) {
-  .pageTitle {
-    font-size: 2.5rem;
+  .pageHeader {
+    padding: 10rem 0 6rem;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .philosophyContent p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeContent {
+    padding: 1.5rem;
+  }
+  
+  .timeContent h3 {
+    font-size: 1.2rem;
+  }
+
+  .timelineItem {
+    padding-left: 60px;
+  }
+  
+  .timeYear {
+    width: 50px;
+    height: 50px;
+    font-size: 0.75rem;
   }
 }

@@ -13,8 +13,6 @@ import {
   HeartHandshake, 
   TrendingUp,
   Diamond,
-  Layout,
-  Calculator,
   Star,
   ArrowRight
 } from "lucide-react";
@@ -61,18 +59,6 @@ const services = [
     color: "#00E0FF", // Cyan/Teal
     title: "Gemstone Advice",
     desc: "Scientific recommendation of gemstones to balance planetary influences."
-  },
-  {
-    icon: <Layout size={40} />,
-    color: "#FF66C4", // Pink
-    title: "Tarot Reading",
-    desc: "Intuitive card readings to gain clarity on specific life questions and future paths."
-  },
-  {
-    icon: <Calculator size={40} />,
-    color: "#6C7A89", // Steel/Gray
-    title: "Numerology",
-    desc: "Name correction and lucky number analysis based on Pythagorean and Chaldean systems."
   }
 ];
 
